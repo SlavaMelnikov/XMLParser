@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.melnikov.by/medicinesxml"
+        xmlns:tns="http://www.melnikov.by/medicinesxml"
+        elementFormDefault="qualified">
+
+    <element name="medicines">
+        <complexType>
+            <sequence>
+                <element name="medicine" type="tns:Medicine" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Medicine">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="group" type="tns:Group"/>
+            <element name="form" type="tns:Form"/>
+            <element name="pharmaceutical-company" type="string" maxOccurs="unbounded"/>
+            <element name="analogs" type="tns:Medicine" minOccurs="0" maxOccurs="3"/>
+            <element name="certificate" type="tns:Certificate"/>
+            <element name="package" type="tns:Package"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="Group">
+        <restriction base="string">
+            <enumeration value="antibiotic"/>
+            <enumeration value="vitamin"/>
+            <enumeration value="painkiller"/>
+            <enumeration value="antiviral"/>
+            <enumeration value="antidepressant"/>
+            <enumeration value="homeopathic"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Form">
+        <restriction base="string">
+            <enumeration value="tablets"/>
+            <enumeration value="capsules"/>
+            <enumeration value="powder"/>
+            <enumeration value="ampoules"/>
+            <enumeration value="drops"/>
+            <enumeration value="ointment"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="registration-number">
+        <restriction base="ID">
+            <pattern value="[A-Z]{2,3}[0-9]{10,15}"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="Certificate">
+        <sequence>
+            <element name="registration-number" type="tns:registration-number"/>
+            <element name="permission-date" type="gYearMonth"/>
+            <element name="expired-date" type="gYearMonth"/>
+            <element name="register-organization" type="string" default="World Health Organization"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="Size">
+        <restriction base="string">
+            <enumeration value="small"/>
+            <enumeration value="medium"/>
+            <enumeration value="large"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="Package">
+        <sequence>
+            <element name="size" type="tns:Size"/>
+        </sequence>
+        <attribute name="quantity" type="positiveInteger" use="optional"/>
+        <attribute name="price" type="positiveInteger" use="required"/>
+    </complexType>
+</schema>
