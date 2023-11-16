@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<medicines>
+    <medicine>
+        <name>Penicillin</name>
+        <group>antibiotics</group>
+        <form>tablets</form>
+        <pharmaceutical-company>Bayern</pharmaceutical-company>
+        <certificate>
+            <registration-number>ger9085728062264</registration-number>
+            <permission-date>2023-05</permission-date>
+            <expired-date>2027-10</expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="120">
+            <size>medium</size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name>duovit</name>
+        <group>vitamins</group>
+        <form>capsules</form>
+        <pharmaceutical-company>duovit</pharmaceutical-company>
+        <certificate>
+            <registration-number>blr236417865290</registration-number>
+            <permission-date>2020-12</permission-date>
+            <expired-date>2030-10</expired-date>
+            <register-organization>belmed</register-organization>
+        </certificate>
+        <package price="10">
+            <size>small</size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+
+    <medicine>
+        <name></name>
+        <group></group>
+        <form></form>
+        <pharmaceutical-company></pharmaceutical-company>
+        <certificate>
+            <registration-number></registration-number>
+            <permission-date></permission-date>
+            <expired-date></expired-date>
+            <register-organization></register-organization>
+        </certificate>
+        <package price="">
+            <size></size>
+        </package>
+    </medicine>
+</medicines>
