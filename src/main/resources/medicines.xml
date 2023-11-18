@@ -1,258 +1,229 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<medicines>
-    <medicine>
-        <name>Penicillin</name>
-        <group>antibiotics</group>
-        <form>tablets</form>
-        <pharmaceutical-company>Bayern</pharmaceutical-company>
-        <certificate>
-            <registration-number>ger9085728062264</registration-number>
-            <permission-date>2023-05</permission-date>
-            <expired-date>2027-10</expired-date>
-            <register-organization></register-organization>
-        </certificate>
-        <package price="120">
-            <size>medium</size>
-        </package>
-    </medicine>
+<?xml version="1.0" encoding="UTF-8"?>
+<medicines xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://www.melnikov.by/medicinesxml"
+           xsi:schemaLocation="http://www.melnikov.by/medicinesxml medicine.xsd" >
 
-    <medicine>
-        <name>duovit</name>
-        <group>vitamins</group>
-        <form>capsules</form>
-        <pharmaceutical-company>duovit</pharmaceutical-company>
-        <certificate>
-            <registration-number>blr236417865290</registration-number>
-            <permission-date>2020-12</permission-date>
+    <!--Не давало писать просто Antibiotic или Vitamins, только вот так вот через xsi и указание типа. Правильно ли так будет?
+
+        Получалось только если убрать абстрактный класс Medicine и сделать Antibiotic и Vitamins самостоятельными классами,
+        или если убрать декларацию namespaces в этом файле-->
+
+    <medicine xsi:type="Antibiotic">
+        <name>Augmentin</name>
+        <package price="14" size="small" quantity="10"/>
+        <pharma-company>USAntibiotics</pharma-company>
+        <analog>Amoxil</analog>
+        <shape>tablets</shape>
+        <dosage dose="1" frequency="morning and evening"/>
+        <certificate registration-number="USA52308239" register-organization="WHO">
+            <permission-date>2015-03</permission-date>
             <expired-date>2030-10</expired-date>
-            <register-organization>belmed</register-organization>
         </certificate>
-        <package price="10">
-            <size>small</size>
-        </package>
+        <need-prescription>true</need-prescription>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Antibiotic">
+        <name>Flagyl</name>
+        <package price="20" quantity="30" size="medium"/>
+        <pharma-company>USAntibiotics</pharma-company>
+        <analog>Augmentin</analog>
+        <analog>Amoxil</analog>
+        <shape>ampoules</shape>
+        <dosage dose="1" frequency="evening"/>
+        <certificate registration-number="USA0328400234" register-organization="WHO">
+            <permission-date>2010-11</permission-date>
+            <expired-date>2025-02</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
+        <need-prescription>true</need-prescription>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Antibiotic">
+        <name>Amoxil</name>
+        <package price="30" size="small" quantity="6"/>
+        <pharma-company>Pfizer</pharma-company>
+        <pharma-company>USAntibiotics</pharma-company>
+        <shape>ampoules</shape>
+        <dosage dose="1" frequency="evening"/>
+        <certificate registration-number="USA19846104">
+            <permission-date>2015-06</permission-date>
+            <expired-date>2026-07</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
+        <need-prescription>true</need-prescription>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Antibiotic">
+        <name>Cipro</name>
+        <package price="20" size="medium" quantity="15"/>
+        <pharma-company>Sun Pharmaceutical Industries</pharma-company>
+        <shape>tablets</shape>
+        <dosage dose="2" frequency="morning, evening"/>
+        <certificate register-organization="Canada Pharmacy" registration-number="CAN92753765">
+            <permission-date>2030-08</permission-date>
+            <expired-date>2020-07</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
+        <need-prescription>true</need-prescription>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Antibiotic">
+        <name>Keflex</name>
+        <package price="15" size="medium"/>
+        <pharma-company>Janssen Pharmaceutical</pharma-company>
+        <analog>Bactrim</analog>
+        <shape>powder</shape>
+        <dosage dose="1" frequency="evening"/>
+        <certificate registration-number="DEN925401741">
+            <permission-date>2019-11</permission-date>
+            <expired-date>2026-02</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
+        <need-prescription>true</need-prescription>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Antibiotic">
+        <name>Bactrim</name>
+        <package price="16" size="small" quantity="10"/>
+        <pharma-company>Pfizer</pharma-company>
+        <pharma-company>USAntibiotics</pharma-company>
+        <shape>tablets</shape>
+        <dosage dose="2" frequency="evening"/>
+        <certificate registration-number="USA000414055">
+            <permission-date>2033-02</permission-date>
+            <expired-date>2023-02</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
+        <need-prescription>true</need-prescription>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Antibiotic">
+        <name>Levaquin</name>
+        <package price="30" size="large" quantity="30"/>
+        <pharma-company>Pfizer</pharma-company>
+        <shape>powder</shape>
+        <dosage dose="1" frequency="morning"/>
+        <certificate registration-number="USA2435256809">
+            <permission-date>2030-01</permission-date>
+            <expired-date>2018-02</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
+        <need-prescription>true</need-prescription>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Antibiotic">
+        <name>Zithromax</name>
+        <package price="7" size="medium" quantity="15"/>
+        <pharma-company>USAntibiotics</pharma-company>
+        <pharma-company>SUN Pharmaceutical Industries</pharma-company>
+        <analog>Amoxil</analog>
+        <analog>Levaquin</analog>
+        <shape>capsules</shape>
+        <dosage dose="3" frequency="morning, afternoon, evening"/>
+        <certificate registration-number="ITA07482945" register-organization="FORZA JUVE">
+            <permission-date>2013-05</permission-date>
+            <expired-date>2024-10</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
+        <need-prescription>true</need-prescription>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Vitamins" for="men" group="A">
+        <name>Duovit</name>
+        <package price="5" size="small" quantity="30"/>
+        <pharma-company>Douvit Corparation</pharma-company>
+        <analog>WHEY</analog>
+        <shape>capsules</shape>
+        <dosage dose="3" frequency="3 times to day"/>
+        <certificate registration-number="RUS016581010" register-organization="RusPharmacy">
+            <permission-date>2018-12</permission-date>
+            <expired-date>2027-10</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Vitamins" for="any" group="B">
+        <name>Centrum</name>
+        <package price="10" size="medium"/>
+        <pharma-company>Centrum Corporation</pharma-company>
+        <analog>Optimum Nutrition</analog>
+        <shape>tablets</shape>
+        <dosage dose="2" frequency="2 times to day"/>
+        <certificate registration-number="RUS016581011">
+            <permission-date>2019-01</permission-date>
+            <expired-date>2028-12</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Vitamins" for="women" group="D">
+        <name>One A Day</name>
+        <package price="15" size="large" quantity="90"/>
+        <pharma-company>One A Day Corporation</pharma-company>
+        <analog>Optimum Nutrition</analog>
+        <shape>tablets</shape>
+        <dosage dose="1" frequency="1 time to day"/>
+        <certificate registration-number="FRA04652622">
+            <permission-date>2020-01</permission-date>
+            <expired-date>2029-12</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Vitamins" for="children" group="C">
+        <name>Flintstones</name>
+        <package price="8" size="small" quantity="60"/>
+        <pharma-company>Flintstones Corporation</pharma-company>
+        <analog>Duovit</analog>
+        <shape>tablets</shape>
+        <dosage dose="3" frequency="3 time to day"/>
+        <certificate registration-number="USA9832462" register-organization="WHO">
+            <permission-date>2021-01</permission-date>
+            <expired-date>2030-12</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Vitamins" for="any" group="E">
+        <name>Geritol</name>
+        <package price="12" size="medium" quantity="90"/>
+        <pharma-company>Geritol Corporation</pharma-company>
+        <shape>tablets</shape>
+        <dosage dose="2" frequency="2 time to day"/>
+        <certificate register-organization="RusPharmacy" registration-number="SWE35355254">
+            <permission-date>2022-01</permission-date>
+            <expired-date>2031-12</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Vitamins" for="men" group="K">
+        <name>Men's One</name>
+        <package price="20" size="large" quantity="120"/>
+        <pharma-company>Men's One Corporation</pharma-company>
+        <analog>Optimum Nutrition</analog>
+        <analog>WHEY</analog>
+        <shape>tablets</shape>
+        <dosage dose="1" frequency="1 time to day"/>
+        <certificate registration-number="RUS016581015" register-organization="RusPharmacy">
+            <permission-date>2023-01</permission-date>
+            <expired-date>2032-12</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
     </medicine>
 
-    <medicine>
-        <name></name>
-        <group></group>
-        <form></form>
-        <pharmaceutical-company></pharmaceutical-company>
-        <certificate>
-            <registration-number></registration-number>
-            <permission-date></permission-date>
-            <expired-date></expired-date>
-            <register-organization></register-organization>
+    <medicine xsi:type="Vitamins" for="women" group="B">
+        <name>Women's One</name>
+        <package price="18" size="medium" quantity="90"/>
+        <pharma-company>Women's One Corporation</pharma-company>
+        <analog>Optimum Nutrition</analog>
+        <shape>tablets</shape>
+        <dosage dose="1" frequency="1 time to day"/>
+        <certificate registration-number="RUS016581016" register-organization="RusPharmacy">
+            <permission-date>2024-01</permission-date>
+            <expired-date>2033-12</expired-date>
         </certificate>
-        <package price="">
-            <size></size>
-        </package>
     </medicine>
+
+    <medicine xsi:type="Vitamins" for="children" group="A">
+        <name>Kids One</name>
+        <package price="10" size="small" quantity="60"/>
+        <pharma-company>Kids One Corporation</pharma-company>
+        <analog>Optimum Nutrition</analog>
+        <shape>ampoules</shape>
+        <dosage dose="1" frequency="1 time to day"/>
+        <certificate registration-number="RUS016581017" register-organization="RusPharmacy">
+            <permission-date>2025-01</permission-date>
+            <expired-date>2034-12</expired-date>
+        </certificate>
+    </medicine>
+
+
 </medicines>
