@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<medicines xmlns="http://www.melnikov.by/medicinesxml">
-    <medicine form="" certificate="">
-        <name></name>
-        <pharma-company></pharma-company>
-        <analogs></analogs>
-    </medicine>
-</medicines>
