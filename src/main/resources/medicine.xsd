@@ -7,7 +7,6 @@
     <element name="medicine" type="tns:Medicine" abstract="true"/>
     <element name="antibiotic" type="tns:Antibiotic" substitutionGroup="tns:medicine"/>
     <element name="vitamins" type="tns:Vitamins" substitutionGroup="tns:medicine"/>
-    <element name="painkiller" type="tns:Painkiller" substitutionGroup="tns:medicine"/>
 
     <element name="medicines">
         <complexType>
@@ -20,30 +19,30 @@
     <complexType name="Medicine">
         <sequence>
             <element name="name" type="string"/>
+            <element name="package" type="tns:Package"/>
             <element name="pharma-company" type="string" maxOccurs="unbounded"/>
-            <element name="analogs" type="string" maxOccurs="unbounded"/>
+            <element name="analog" type="string" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="shape">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="tablets"/>
+                        <enumeration value="capsules"/>
+                        <enumeration value="powder"/>
+                        <enumeration value="ampoules"/>
+                    </restriction>
+                </simpleType>
+            </element>
+            <element name="dosage" type="tns:Dosage"/>
+            <element name="certificate" type="tns:Certificate"/>
         </sequence>
-        <attribute name ="form" use="required">
-            <simpleType>
-                <restriction base="string">
-                    <enumeration value="tablets"/>
-                    <enumeration value="capsules"/>
-                    <enumeration value="powder"/>
-                    <enumeration value="ampoules"/>
-                    <enumeration value="drops"/>
-                    <enumeration value="ointment"/>
-                </restriction>
-            </simpleType>
-        </attribute>
-        <attribute name="certificate" type="tns:Certificate" use="required"/>
-        <attribute name="package" type="tns:Package" use="optional"/>
-        <attribute name="dosage" type="tns:Dosage" use="optional"/>
     </complexType>
 
     <complexType name="Antibiotic">
         <complexContent>
             <extension base="tns:Medicine">
-                <attribute name="need-prescription" type="boolean" use="required"/>
+                <sequence>
+                    <element name="need-prescription" type="boolean"/>
+                </sequence>
             </extension>
         </complexContent>
     </complexType>
@@ -51,68 +50,37 @@
     <complexType name="Vitamins">
         <complexContent>
             <extension base="tns:Medicine">
-                <attribute name="target" type="string" use="optional" default="all-purpose">
+                <attribute name="for" use="required">
                     <simpleType>
                         <restriction base="string">
-                            <enumeration value="all-purpose"/>
+                            <enumeration value="any"/>
                             <enumeration value="men"/>
                             <enumeration value="women"/>
+                            <enumeration value="children"/>
                         </restriction>
                     </simpleType>
                 </attribute>
-                <attribute name="group" type="string" use="required">
-                    <simpleType>
-                        <restriction base="string">
-                            <enumeration value="A"/>
-                            <enumeration value="C"/>
-                            <enumeration value="D"/>
-                            <enumeration value="B12"/>
-                        </restriction>
-                    </simpleType>
-                </attribute>
+                <attribute name="group" type="string" use="required"/>
             </extension>
         </complexContent>
-    </complexType>
-
-    <complexType name="Painkiller">
-        <complexContent>
-            <extension base="tns:Medicine">
-                <attribute name="is-narcotic" type="boolean" use="required"/>
-            </extension>
-        </complexContent>
-    </complexType>
-
-    <complexType name="Certificate">
-        <sequence>
-            <element name="permission-date" type="gYearMonth"/>
-            <element name="expired-date" type="gYearMonth"/>
-        </sequence>
-        <attribute name="registration-number">
-            <simpleType>
-                <restriction base="ID">
-                    <pattern value="[A-Z]{2,3}[0-9]{10,15}"/>
-                </restriction>
-            </simpleType>
-        </attribute>
-        <attribute name="register-organization" type="string" use="optional" default="unknown"/>
     </complexType>
 
     <complexType name="Package">
-        <attribute name="size">
-            <simpleType>
-                <restriction base="string">
-                    <enumeration value="small"/>
-                    <enumeration value="medium"/>
-                    <enumeration value="large"/>
-                </restriction>
-            </simpleType>
-        </attribute>
         <attribute name="price" type="positiveInteger" use="required"/>
-        <attribute name="quantity" use="required">
+        <attribute name="size" use="required">
+                <simpleType>
+                    <restriction base="string">
+                        <enumeration value="small"/>
+                        <enumeration value="medium"/>
+                        <enumeration value="large"/>
+                    </restriction>
+                </simpleType>
+        </attribute>
+        <attribute name="quantity" use="optional">
             <simpleType>
                 <restriction base="unsignedInt">
                     <minInclusive value="0"/>
-                    <maxExclusive value="1000"/>
+                    <maxExclusive value="500"/>
                 </restriction>
             </simpleType>
         </attribute>
@@ -120,6 +88,21 @@
 
     <complexType name="Dosage">
         <attribute name="dose" type="positiveInteger" use="required"/>
-        <attribute name="frequency" type="string" use="optional" default="one-to-day"/>
+        <attribute name="frequency" type="string" use="required"/>
+    </complexType>
+
+    <complexType name="Certificate">
+        <sequence>
+            <element name="permission-date" type="gYearMonth"/>
+            <element name="expired-date" type="gYearMonth"/>
+        </sequence>
+        <attribute name="registration-number" use="required">
+            <simpleType>
+                <restriction base="ID">
+                    <pattern value="[a-zA-Z]{2,3}[0-9]{5,15}"/>
+                </restriction>
+            </simpleType>
+        </attribute>
+        <attribute name="register-organization" type="string" use="optional" default="unknown"/>
     </complexType>
 </schema>
