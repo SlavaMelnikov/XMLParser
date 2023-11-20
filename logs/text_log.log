@@ -1,0 +1,2 @@
+16:47:18.335 [main] ERROR by.melnikov.medicinesxml.handler.MedicinesErrorHandler - 190 : 59 - cvc-maxExclusive-valid: Value '1200' is not facet-valid with respect to maxExclusive '500' for type '#AnonType_quantityPackage'.
+16:47:18.339 [main] ERROR by.melnikov.medicinesxml.handler.MedicinesErrorHandler - 190 : 59 - cvc-attribute.3: The value '1200' of attribute 'quantity' on element 'package' is not valid with respect to its type, '#AnonType_quantityPackage'.

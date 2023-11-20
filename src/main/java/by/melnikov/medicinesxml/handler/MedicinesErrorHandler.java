@@ -7,7 +7,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 public class MedicinesErrorHandler implements ErrorHandler {
-    private static final Logger logger = LogManager.getLogger();
+    private static final Logger logger = LogManager.getLogger("CustomErrorHandler");
     @Override
     public void warning(SAXParseException e) throws SAXException {
         logger.warn(getLineColumnNumber(e) + " - " + e.getMessage());

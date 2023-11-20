@@ -13,20 +13,18 @@ import java.io.File;
 import java.io.IOException;
 
 public class MedicinesXMLValidator {
-    public static boolean validateXMLFile(String pathToXMLFile) {
+    public static boolean validateXMLFile(String xmlFile, String xsdFile) {
         String language = XMLConstants.W3C_XML_SCHEMA_NS_URI;
-        String fileName = pathToXMLFile;
-        String schemaName = "src//main//resources//medicine.xsd";
         SchemaFactory factory = SchemaFactory.newInstance(language);
-        File schemaLocation = new File(schemaName);
+        File schemaLocation = new File(xsdFile);
         try {
             Schema schema = factory.newSchema(schemaLocation);
             Validator validator = schema.newValidator();
-            Source source = new StreamSource(fileName);
+            Source source = new StreamSource(xmlFile);
             validator.setErrorHandler(new MedicinesErrorHandler());
             validator.validate(source);
         } catch (SAXException | IOException e) {
-            System.err.println(fileName + " is not correct or valid");
+            System.err.println(xmlFile + " is not correct or valid");
             return false;
         }
         return true;

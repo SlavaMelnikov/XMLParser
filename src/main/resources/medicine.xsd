@@ -20,7 +20,7 @@
         <sequence>
             <element name="name" type="string"/>
             <element name="package" type="tns:Package"/>
-            <element name="pharma-company" type="string" maxOccurs="unbounded"/>
+            <element name="company" type="string" maxOccurs="unbounded"/>
             <element name="analog" type="string" minOccurs="0" maxOccurs="unbounded"/>
             <element name="shape">
                 <simpleType>
@@ -103,6 +103,6 @@
                 </restriction>
             </simpleType>
         </attribute>
-        <attribute name="register-organization" type="string" use="optional" default="unknown"/>
+        <attribute name="registry-organization" type="string" use="optional" default="unknown"/>
     </complexType>
 </schema>
