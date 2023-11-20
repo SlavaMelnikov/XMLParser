@@ -1,6 +1,6 @@
 package by.melnikov.medicinesxml.entity;
 
-public enum MedicineTags {
+public enum MedicineTags { //FIXME
     MEDICINE,
     MEDICINES,
     ANTIBIOTIC, NEED_PRESCRIPTION,
