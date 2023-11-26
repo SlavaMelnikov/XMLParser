@@ -36,7 +36,7 @@ public class MedicineBuilderFactory {
 //            case JAXB -> {
 //                return new MedicineJaxbBuilder();
 //            }
-            default -> throw new EnumConstantNotPresentException(type.getDeclaringClass(), type.name());
+            default -> throw new MedicineCustomException("not found such a parser: " + type.name());
         }
     }
 
