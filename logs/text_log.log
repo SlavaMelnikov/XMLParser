@@ -1,2 +1,3 @@
-16:47:18.335 [main] ERROR by.melnikov.medicinesxml.handler.MedicinesErrorHandler - 190 : 59 - cvc-maxExclusive-valid: Value '1200' is not facet-valid with respect to maxExclusive '500' for type '#AnonType_quantityPackage'.
-16:47:18.339 [main] ERROR by.melnikov.medicinesxml.handler.MedicinesErrorHandler - 190 : 59 - cvc-attribute.3: The value '1200' of attribute 'quantity' on element 'package' is not valid with respect to its type, '#AnonType_quantityPackage'.
+18:32:22.548 [main] FATAL by.melnikov.medicinesxml.handler.MedicineErrorHandler - 62 : 5 - The end-tag for element type "antibiotic" must end with a '>' delimiter.
+18:32:22.559 [main] ERROR by.melnikov.medicinesxml.exception.MedicineCustomException - src//main//resources//medicines.xml is not correct or valid
+18:32:47.729 [main] ERROR by.melnikov.medicinesxml.exception.MedicineCustomException - src//main//resources//medicines.xml is not correct or valid

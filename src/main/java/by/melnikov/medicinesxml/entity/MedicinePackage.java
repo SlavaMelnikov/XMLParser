@@ -4,10 +4,10 @@ import java.util.Objects;
 import java.util.StringJoiner;
 
 public class MedicinePackage {
-    private enum Size {
+    public enum Size {
         SMALL, MEDIUM, LARGE
     }
-    private static final String DEFAULT_QUANTITY = "unknown";
+    public static final String DEFAULT_QUANTITY = "unknown";
     private int price;
     private Size size;
     private String quantity;
@@ -67,7 +67,7 @@ public class MedicinePackage {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", MedicinePackage.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ","[", "]")
                 .add("price=" + price)
                 .add("size=" + size)
                 .add("quantity='" + quantity + "'")

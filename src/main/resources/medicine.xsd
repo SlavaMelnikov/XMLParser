@@ -6,12 +6,12 @@
 
     <element name="medicine" type="tns:Medicine" abstract="true"/>
     <element name="antibiotic" type="tns:Antibiotic" substitutionGroup="tns:medicine"/>
-    <element name="vitamins" type="tns:Vitamins" substitutionGroup="tns:medicine"/>
+    <element name="vitamin" type="tns:Vitamin" substitutionGroup="tns:medicine"/>
 
     <element name="medicines">
-        <complexType>
+        <complexType mixed="true">
             <sequence>
-                <element name="medicine" type="tns:Medicine" maxOccurs="unbounded"/>
+                <element ref="tns:medicine" minOccurs="1" maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>
@@ -32,7 +32,12 @@
                     </restriction>
                 </simpleType>
             </element>
-            <element name="dosage" type="tns:Dosage"/>
+            <element name="dosage">
+                <complexType>
+                    <attribute name="dose" type="positiveInteger" use="required"/>
+                    <attribute name="frequency" type="string" use="required"/>
+                </complexType>
+            </element>
             <element name="certificate" type="tns:Certificate"/>
         </sequence>
     </complexType>
@@ -47,7 +52,7 @@
         </complexContent>
     </complexType>
 
-    <complexType name="Vitamins">
+    <complexType name="Vitamin">
         <complexContent>
             <extension base="tns:Medicine">
                 <attribute name="for" use="required">
@@ -86,11 +91,6 @@
         </attribute>
     </complexType>
 
-    <complexType name="Dosage">
-        <attribute name="dose" type="positiveInteger" use="required"/>
-        <attribute name="frequency" type="string" use="required"/>
-    </complexType>
-
     <complexType name="Certificate">
         <sequence>
             <element name="permission-date" type="gYearMonth"/>
@@ -105,4 +105,5 @@
         </attribute>
         <attribute name="registry-organization" type="string" use="optional" default="unknown"/>
     </complexType>
+
 </schema>

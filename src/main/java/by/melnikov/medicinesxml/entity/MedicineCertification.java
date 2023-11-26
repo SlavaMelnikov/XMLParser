@@ -5,7 +5,7 @@ import java.util.Objects;
 import java.util.StringJoiner;
 
 public class MedicineCertification {
-    private static final String DEFAULT_REGISTRY_ORGANIZATION = "unknown";
+    public static final String DEFAULT_REGISTRY_ORGANIZATION = "unknown";
     private YearMonth permissionDate;
     private YearMonth expiredDate;
     private String id;
@@ -78,7 +78,7 @@ public class MedicineCertification {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", MedicineCertification.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", "[", "]")
                 .add("permissionDate=" + permissionDate)
                 .add("expiredDate=" + expiredDate)
                 .add("id='" + id + "'")

@@ -14,7 +14,7 @@ public class Antibiotic extends Medicine {
         this.needPrescription = needPrescription;
     }
 
-    public boolean isNeedPrescription() {
+    public boolean needPrescription() {
         return needPrescription;
     }
 
@@ -42,7 +42,7 @@ public class Antibiotic extends Medicine {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", Antibiotic.class.getSimpleName() + "[", "]")
+        return new StringJoiner("\t", Antibiotic.class.getSimpleName() + ":\n", "\n")
                 .add(super.toString())
                 .add("needPrescription=" + needPrescription)
                 .toString();

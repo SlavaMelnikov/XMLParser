@@ -123,14 +123,14 @@ public abstract class Medicine {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ")
-                .add("name='" + name + "'")
-                .add("medicinePackage=" + medicinePackage)
-                .add("companies=" + companies)
-                .add("analogs=" + analogs)
-                .add("shape=" + shape)
-                .add("dosage=" + dosage)
-                .add("certification=" + certification)
+        return new StringJoiner("\t")
+                .add("\tname='" + name + "'\n")
+                .add("medicinePackage=" + medicinePackage + "\n")
+                .add("companies=" + companies + "\n")
+                .add("analogs=" + analogs + "\n")
+                .add("shape=" + shape + "\n")
+                .add("dosage=" + dosage + "\n")
+                .add("certification=" + certification + "\n")
                 .toString();
     }
 }

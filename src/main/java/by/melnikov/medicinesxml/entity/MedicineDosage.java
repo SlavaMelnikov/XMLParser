@@ -51,7 +51,7 @@ public class MedicineDosage {
 
     @Override
     public String toString() {
-        return new StringJoiner(", ", MedicineDosage.class.getSimpleName() + "[", "]")
+        return new StringJoiner(", ", "[", "]")
                 .add("dose=" + dose)
                 .add("frequency='" + frequency + "'")
                 .toString();

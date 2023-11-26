@@ -3,12 +3,7 @@
            xmlns="http://www.melnikov.by/medicinesxml"
            xsi:schemaLocation="http://www.melnikov.by/medicinesxml medicine.xsd" >
 
-    <!--Не давало писать просто Antibiotic или Vitamins, только вот так вот через xsi и указание типа. Правильно ли так будет?
-
-        Получалось только если убрать абстрактный класс Medicine и сделать Antibiotic и Vitamins самостоятельными классами,
-        или если убрать декларацию namespaces в этом файле-->
-
-    <medicine xsi:type="Antibiotic">
+    <antibiotic>
         <name>Augmentin</name>
         <package price="14" size="small" quantity="10"/>
         <company>USAntibiotics</company>
@@ -20,9 +15,9 @@
             <expired-date>2030-10</expired-date>
         </certificate>
         <need-prescription>true</need-prescription>
-    </medicine>
+    </antibiotic>
 
-    <medicine xsi:type="Antibiotic">
+    <antibiotic>
         <name>Flagyl</name>
         <package price="20" quantity="30" size="medium"/>
         <company>USAntibiotics</company>
@@ -34,10 +29,10 @@
             <permission-date>2010-11</permission-date>
             <expired-date>2025-02</expired-date>
         </certificate>
-        <need-prescription>true</need-prescription>
-    </medicine>
+        <need-prescription>false</need-prescription>
+    </antibiotic>
 
-    <medicine xsi:type="Antibiotic">
+    <antibiotic>
         <name>Amoxil</name>
         <package price="30" quantity="6" size="small"/>
         <company>Pfizer</company>
@@ -49,9 +44,9 @@
             <expired-date>2026-07</expired-date>
         </certificate>
         <need-prescription>true</need-prescription>
-    </medicine>
+    </antibiotic>
 
-    <medicine xsi:type="Antibiotic">
+    <antibiotic>
         <name>Cipro</name>
         <package quantity="15" price="20" size="medium"/>
         <company>Sun Pharmaceutical Industries</company>
@@ -61,10 +56,10 @@
             <permission-date>2030-08</permission-date>
             <expired-date>2020-07</expired-date>
         </certificate>
-        <need-prescription>true</need-prescription>
-    </medicine>
+        <need-prescription>false</need-prescription>
+    </antibiotic>
 
-    <medicine xsi:type="Antibiotic">
+    <antibiotic>
         <name>Keflex</name>
         <package price="15" size="medium"/>
         <company>Janssen Pharmaceutical</company>
@@ -75,10 +70,10 @@
             <permission-date>2019-11</permission-date>
             <expired-date>2026-02</expired-date>
         </certificate>
-        <need-prescription>true</need-prescription>
-    </medicine>
+        <need-prescription>false</need-prescription>
+    </antibiotic>
 
-    <medicine xsi:type="Antibiotic">
+    <antibiotic>
         <name>Bactrim</name>
         <package price="16" size="small" quantity="10"/>
         <company>Pfizer</company>
@@ -90,9 +85,9 @@
             <expired-date>2023-02</expired-date>
         </certificate>
         <need-prescription>true</need-prescription>
-    </medicine>
+    </antibiotic>
 
-    <medicine xsi:type="Antibiotic">
+    <antibiotic>
         <name>Levaquin</name>
         <package price="30" size="large" quantity="30"/>
         <company>Pfizer</company>
@@ -103,9 +98,9 @@
             <expired-date>2018-02</expired-date>
         </certificate>
         <need-prescription>true</need-prescription>
-    </medicine>
+    </antibiotic>
 
-    <medicine xsi:type="Antibiotic">
+    <antibiotic>
         <name>Zithromax</name>
         <package price="7" size="medium"/>
         <company>USAntibiotics</company>
@@ -119,9 +114,9 @@
             <expired-date>2024-10</expired-date>
         </certificate>
         <need-prescription>true</need-prescription>
-    </medicine>
+    </antibiotic>
 
-    <medicine xsi:type="Vitamins" for="men" group="A">
+    <vitamin for="men" group="A">
         <name>Duovit</name>
         <package quantity="30" price="5" size="small"/>
         <company>Douvit Corparation</company>
@@ -132,9 +127,9 @@
             <permission-date>2018-12</permission-date>
             <expired-date>2027-10</expired-date>
         </certificate>
-    </medicine>
+    </vitamin>
 
-    <medicine xsi:type="Vitamins" for="any" group="B">
+    <vitamin  group="B" for="any">
         <name>Centrum</name>
         <package price="10" size="medium"/>
         <company>Centrum Corporation</company>
@@ -145,9 +140,9 @@
             <permission-date>2019-01</permission-date>
             <expired-date>2028-12</expired-date>
         </certificate>
-    </medicine>
+    </vitamin>
 
-    <medicine xsi:type="Vitamins" for="women" group="D">
+    <vitamin for="women" group="D">
         <name>One A Day</name>
         <package price="15" size="large" quantity="90"/>
         <company>One A Day Corporation</company>
@@ -158,9 +153,9 @@
             <permission-date>2020-01</permission-date>
             <expired-date>2029-12</expired-date>
         </certificate>
-    </medicine>
+    </vitamin>
 
-    <medicine xsi:type="Vitamins" for="children" group="C">
+    <vitamin group="C" for="children">
         <name>Flintstones</name>
         <package price="8" size="small" quantity="60"/>
         <company>Flintstones Corporation</company>
@@ -171,9 +166,9 @@
             <permission-date>2021-01</permission-date>
             <expired-date>2030-12</expired-date>
         </certificate>
-    </medicine>
+    </vitamin>
 
-    <medicine xsi:type="Vitamins" for="any" group="multi">
+    <vitamin for="any" group="multi">
         <name>Geritol</name>
         <package size="medium" price="12" quantity="90"/>
         <company>Geritol Corporation</company>
@@ -183,9 +178,9 @@
             <permission-date>2022-01</permission-date>
             <expired-date>2031-12</expired-date>
         </certificate>
-    </medicine>
+    </vitamin>>
 
-    <medicine xsi:type="Vitamins" for="men" group="K">
+    <vitamin for="men" group="K">
         <name>Men's One</name>
         <package price="20" size="large"/>
         <company>Men's One Corporation</company>
@@ -197,9 +192,9 @@
             <permission-date>2023-01</permission-date>
             <expired-date>2032-12</expired-date>
         </certificate>
-    </medicine>
+    </vitamin>>
 
-    <medicine xsi:type="Vitamins" for="women" group="B">
+    <vitamin for="women" group="B">
         <name>Women's One</name>
         <package price="18" size="medium" quantity="90"/>
         <company>Women's One Corporation</company>
@@ -211,9 +206,9 @@
             <permission-date>2024-01</permission-date>
             <expired-date>2033-12</expired-date>
         </certificate>
-    </medicine>
+    </vitamin>>
 
-    <medicine xsi:type="Vitamins" for="children" group="multi">
+    <vitamin for="children" group="multi">
         <name>Kids One</name>
         <package price="10" size="small" quantity="60"/>
         <company>Kids One Corporation</company>
@@ -224,7 +219,6 @@
             <permission-date>2025-01</permission-date>
             <expired-date>2034-12</expired-date>
         </certificate>
-    </medicine>
-
+    </vitamin>>
 
 </medicines>
