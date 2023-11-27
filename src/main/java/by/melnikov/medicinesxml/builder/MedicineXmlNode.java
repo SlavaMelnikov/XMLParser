@@ -1,4 +1,4 @@
-package by.melnikov.medicinesxml.entity;
+package by.melnikov.medicinesxml.builder;
 
 public enum MedicineXmlNode {
     MEDICINES,

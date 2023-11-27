@@ -1,8 +1,9 @@
 package by.melnikov.medicinesxml.handler;
 
+import by.melnikov.medicinesxml.builder.MedicineXmlNode;
 import by.melnikov.medicinesxml.entity.*;
 
-import static by.melnikov.medicinesxml.entity.MedicineXmlNode.*;
+import static by.melnikov.medicinesxml.builder.MedicineXmlNode.*;
 
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
@@ -10,7 +11,6 @@ import org.xml.sax.helpers.DefaultHandler;
 
 import java.time.YearMonth;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 
@@ -114,7 +114,7 @@ public class MedicineHandler extends DefaultHandler {
                 case SHAPE -> currentMedicine.setShape(Medicine.Shape.valueOf(data.toUpperCase()));
                 case PERMISSION_DATE -> medicineCertification.setPermissionDate(YearMonth.parse(data));
                 case EXPIRED_DATE -> medicineCertification.setExpiredDate(YearMonth.parse(data));
-                case NEED_PRESCRIPTION -> ((Antibiotic) currentMedicine).setNeedPrescription("true".equals(data));
+                case NEED_PRESCRIPTION -> ((Antibiotic) currentMedicine).setNeedPrescription(Boolean.parseBoolean(data));
             }
         }
         currentXmlNode = null;

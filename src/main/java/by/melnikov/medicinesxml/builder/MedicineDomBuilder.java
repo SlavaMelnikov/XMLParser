@@ -2,7 +2,7 @@ package by.melnikov.medicinesxml.builder;
 
 import by.melnikov.medicinesxml.entity.*;
 import by.melnikov.medicinesxml.exception.MedicineCustomException;
-import static by.melnikov.medicinesxml.entity.MedicineXmlNode.*;
+import static by.melnikov.medicinesxml.builder.MedicineXmlNode.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -42,8 +42,8 @@ public class MedicineDomBuilder extends AbstractMedicineBuilder {
         try {
             document = documentBuilder.parse(fileName);
             Element root = document.getDocumentElement();
-            NodeList antibioticsList = root.getElementsByTagName("antibiotic");
-            NodeList vitaminsList = root.getElementsByTagName("vitamin");
+            NodeList antibioticsList = root.getElementsByTagName(ANTIBIOTIC.getTag());
+            NodeList vitaminsList = root.getElementsByTagName(VITAMIN.getTag());
             for (int i = 0; i < antibioticsList.getLength(); i++) {
                 Element antibioticElement = (Element) antibioticsList.item(i);
                 Medicine antibiotic = buildMedicine(antibioticElement);
@@ -71,10 +71,10 @@ public class MedicineDomBuilder extends AbstractMedicineBuilder {
         MedicineCertification medicineCertification = buildMedicineCertification(certificationElement);
 
         Medicine medicine = null;
-        if ("antibiotic".equals(medicineElement.getNodeName())) {
+        if (ANTIBIOTIC.getTag().equals(medicineElement.getNodeName())) {
              medicine = new Antibiotic();
-            ((Antibiotic) medicine).setNeedPrescription("true".equals(getElementTextContent(medicineElement, NEED_PRESCRIPTION.getTag())));
-        } else if ("vitamin".equals(medicineElement.getNodeName())){
+            ((Antibiotic) medicine).setNeedPrescription(Boolean.parseBoolean(getElementTextContent(medicineElement, NEED_PRESCRIPTION.getTag())));
+        } else if (VITAMIN.getTag().equals(medicineElement.getNodeName())){
             medicine = new Vitamin();
             ((Vitamin) medicine).setTarget(Vitamin.Target.valueOf(medicineElement.getAttribute(FOR.getTag()).toUpperCase()));
             ((Vitamin) medicine).setGroup(medicineElement.getAttribute(GROUP.getTag()));
