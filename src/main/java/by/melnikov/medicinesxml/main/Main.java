@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) throws MedicineCustomException {
         MedicinesXmlValidator.validateXMLFile(XML_FILE, XSD_FILE);
         MedicineBuilderFactory factory = MedicineBuilderFactory.getInstance();
-        String[] parsers = {"Dom", " SAX "};
+        String[] parsers = {"DOM", "sax", "stax stream", "Stax-events"};
         for (String parser : parsers) {
             AbstractMedicineBuilder builder = factory.createMedicineBuilder(parser);
             builder.buildSetMedicines(XML_FILE);

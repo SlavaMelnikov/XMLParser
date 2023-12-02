@@ -15,7 +15,7 @@ public class MedicineBuilderFactory {
         return instance;
     }
     private enum TypeParser{
-        DOM, SAX, STAX_STREAM, STAX_EVENT, JAXB
+        DOM, SAX, STAX_STREAM, STAX_EVENTS, JAXB
     }
 
     public AbstractMedicineBuilder createMedicineBuilder(String typeParser) throws MedicineCustomException {
@@ -27,12 +27,12 @@ public class MedicineBuilderFactory {
             case SAX -> {
                 return new MedicineSaxBuilder();
             }
-//            case STAX_STREAM -> {
-//                return new MedicineStaxStreamBuilder();
-//            }
-//            case STAX_EVENT -> {
-//                return new MedicineStaxEventBuilder();
-//            }
+            case STAX_STREAM -> {
+                return new MedicineStaxStreamBuilder();
+            }
+            case STAX_EVENTS -> {
+                return new MedicineStaxEventsBuilder();
+            }
 //            case JAXB -> {
 //                return new MedicineJaxbBuilder();
 //            }

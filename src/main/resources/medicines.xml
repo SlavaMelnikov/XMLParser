@@ -3,6 +3,19 @@
            xmlns="http://www.melnikov.by/medicinesxml"
            xsi:schemaLocation="http://www.melnikov.by/medicinesxml medicine.xsd" >
 
+    <vitamin for="men" group="A">
+        <name>Duovit</name>
+        <package quantity="30" price="5" size="small"/>
+        <company>Douvit Corparation</company>
+        <analog>WHEY</analog>
+        <shape>capsules</shape>
+        <dosage dose="3" frequency="3 times to day"/>
+        <certificate registration-number="RUS016581010" registry-organization="RusPharmacy">
+            <permission-date>2018-12</permission-date>
+            <expired-date>2027-10</expired-date>
+        </certificate>
+    </vitamin>
+
     <antibiotic>
         <name>Augmentin</name>
         <package price="14" size="small" quantity="10"/>
@@ -116,20 +129,7 @@
         <need-prescription>true</need-prescription>
     </antibiotic>
 
-    <vitamin for="men" group="A">
-        <name>Duovit</name>
-        <package quantity="30" price="5" size="small"/>
-        <company>Douvit Corparation</company>
-        <analog>WHEY</analog>
-        <shape>capsules</shape>
-        <dosage dose="3" frequency="3 times to day"/>
-        <certificate registration-number="RUS016581010" registry-organization="RusPharmacy">
-            <permission-date>2018-12</permission-date>
-            <expired-date>2027-10</expired-date>
-        </certificate>
-    </vitamin>
-
-    <vitamin  group="B" for="any">
+    <vitamin group="B" for="any">
         <name>Centrum</name>
         <package price="10" size="medium"/>
         <company>Centrum Corporation</company>
@@ -199,7 +199,7 @@
         <package price="18" size="medium" quantity="90"/>
         <company>Women's One Corporation</company>
         <company>One A Day Corporation</company>
-        <analog>Optimum Nutrition</analog>
+        <analog>Geritol</analog>
         <shape>tablets</shape>
         <dosage dose="1" frequency="1 time to day"/>
         <certificate registration-number="RUS016581016" registry-organization="RusPharmacy">
@@ -212,7 +212,6 @@
         <name>Kids One</name>
         <package price="10" size="small" quantity="60"/>
         <company>Kids One Corporation</company>
-        <analog>Optimum Nutrition</analog>
         <shape>ampoules</shape>
         <dosage dose="1" frequency="1 time to day"/>
         <certificate registration-number="RUS016581017" registry-organization="RusPharmacy">
