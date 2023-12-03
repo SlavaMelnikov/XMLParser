@@ -8,7 +8,7 @@ import java.util.Set;
 @XmlRootElement(name = "medicines", namespace = "http://www.melnikov.by/medicinesxml")
 public class Medicines {
     @XmlElement(name = "medicine")
-    public Set<Medicine> medicines = new HashSet<>();
+    public Set<Medicine> medicines = new HashSet<>(); //public, потому что если делаю private и добавляю getter, появляется ошибка, которую не могу решить
 
     public Medicines() {
     }
@@ -16,10 +16,4 @@ public class Medicines {
     public void setMedicines(Set<Medicine> medicines) {
         this.medicines = medicines;
     }
-
-    public boolean add(Medicine medicine) {
-        return medicines.add(medicine);
-    }
-
-
 }

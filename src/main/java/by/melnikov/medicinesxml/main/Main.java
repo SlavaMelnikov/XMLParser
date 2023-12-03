@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.Collection;
 import java.util.Set;
 
 public class Main {
@@ -28,7 +29,7 @@ public class Main {
         }
     }
 
-    public static void writeResultToFile(Set<Medicine> medicines) throws MedicineCustomException {
+    public static void writeResultToFile(Collection<Medicine> medicines) throws MedicineCustomException {
         try {
             Path path = Path.of(PARSING_RESULT);
             for (Medicine medicine : medicines) {
