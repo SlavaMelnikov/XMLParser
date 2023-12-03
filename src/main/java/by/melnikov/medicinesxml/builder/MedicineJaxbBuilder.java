@@ -12,11 +12,11 @@ import java.io.FileReader;
 import java.util.Set;
 
 public class MedicineJaxbBuilder extends AbstractMedicineBuilder {
-    private Medicines medicines = new Medicines();
+    private Medicines unmarshalledMedicines = new Medicines();
 
     @Override
     public Set<Medicine> getMedicines() {
-        return medicines.getMedicines();
+        return unmarshalledMedicines.medicines;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class MedicineJaxbBuilder extends AbstractMedicineBuilder {
             JAXBContext jaxbContext = JAXBContext.newInstance(Medicines.class);
             Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
             FileReader reader = new FileReader(fileName);
-            medicines = (Medicines) unmarshaller.unmarshal(reader);
+            unmarshalledMedicines = (Medicines) unmarshaller.unmarshal(reader);
         } catch (JAXBException e) {
             throw new MedicineCustomException("Unmarshalling error", e);
         } catch (FileNotFoundException e) {

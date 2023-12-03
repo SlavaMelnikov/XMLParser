@@ -5,20 +5,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.HashSet;
 import java.util.Set;
 
-@XmlRootElement
+@XmlRootElement(name = "medicines", namespace = "http://www.melnikov.by/medicinesxml")
 public class Medicines {
-    @XmlElement(name = "medicines")
-    private Set<Medicine> medicines = new HashSet<>();
+    @XmlElement(name = "medicine")
+    public Set<Medicine> medicines = new HashSet<>();
 
     public Medicines() {
     }
 
     public void setMedicines(Set<Medicine> medicines) {
         this.medicines = medicines;
-    }
-
-    public Set<Medicine> getMedicines() {
-        return medicines;
     }
 
     public boolean add(Medicine medicine) {

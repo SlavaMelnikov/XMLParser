@@ -131,4 +131,5 @@ public class MedicineDomBuilder extends AbstractMedicineBuilder {
         Node node = nList.item(0);
         return node.getTextContent();
     }
+
 }
