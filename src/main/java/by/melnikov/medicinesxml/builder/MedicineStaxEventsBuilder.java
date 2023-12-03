@@ -1,5 +1,6 @@
 package by.melnikov.medicinesxml.builder;
 
+import static by.melnikov.medicinesxml.builder.MedicineXmlNode.*;
 import by.melnikov.medicinesxml.entity.*;
 import by.melnikov.medicinesxml.exception.MedicineCustomException;
 
@@ -19,15 +20,12 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import static by.melnikov.medicinesxml.builder.MedicineXmlNode.*;
-
 public class MedicineStaxEventsBuilder extends AbstractMedicineBuilder {
-    private Set<Medicine> medicines;
+    private final Set<Medicine> medicines;
     private Medicine currentMedicine;
     private MedicineXmlNode currentNode;
     private XMLEventReader reader;
     private XMLEvent event;
-    private StartElement startElement;
 
     public MedicineStaxEventsBuilder() {
         medicines = new HashSet<>();
@@ -46,7 +44,7 @@ public class MedicineStaxEventsBuilder extends AbstractMedicineBuilder {
             while (reader.hasNext()) {
                 event = reader.nextEvent();
                 if (event.isStartElement()) {
-                    startElement = event.asStartElement();
+                    StartElement startElement = event.asStartElement();
                     currentNode = getCurrentNode(startElement);
                     if (currentNode == ANTIBIOTIC || currentNode == VITAMIN) {
                         medicines.add(buildMedicine(startElement));
@@ -117,12 +115,12 @@ public class MedicineStaxEventsBuilder extends AbstractMedicineBuilder {
         return medicineDosage;
     }
 
-    private MedicineCertification buildMedicineCertification(StartElement startElement) throws XMLStreamException {
-        MedicineCertification medicineCertification = new MedicineCertification();
-        medicineCertification.setId(startElement.getAttributeByName(new QName(REGISTRATION_NUMBER.getTag())).getValue());
+    private MedicineCertificate buildMedicineCertification(StartElement startElement) throws XMLStreamException {
+        MedicineCertificate medicineCertificate = new MedicineCertificate();
+        medicineCertificate.setId(startElement.getAttributeByName(new QName(REGISTRATION_NUMBER.getTag())).getValue());
         Optional<Attribute> registryOrganizationOptional = Optional.ofNullable(startElement.getAttributeByName(new QName(REGISTRY_ORGANIZATION.getTag())));
-        String registryOrganization = registryOrganizationOptional.isPresent() ? registryOrganizationOptional.get().getValue() : MedicineCertification.DEFAULT_REGISTRY_ORGANIZATION;
-        medicineCertification.setRegistryOrganization(registryOrganization);
+        String registryOrganization = registryOrganizationOptional.isPresent() ? registryOrganizationOptional.get().getValue() : MedicineCertificate.DEFAULT_REGISTRY_ORGANIZATION;
+        medicineCertificate.setRegistryOrganization(registryOrganization);
         boolean isPermissionDate = false;
         boolean isExpiredDate = false;
         while (reader.hasNext()) {
@@ -132,18 +130,18 @@ public class MedicineStaxEventsBuilder extends AbstractMedicineBuilder {
                 currentNode = getCurrentNode(startElement);
                 switch (currentNode) {
                     case PERMISSION_DATE -> {
-                        medicineCertification.setPermissionDate(YearMonth.parse(getXMLText(reader)));
+                        medicineCertificate.setPermissionDate(YearMonth.parse(getXMLText(reader)));
                         isPermissionDate = true;
                     }
                     case EXPIRED_DATE -> {
-                        medicineCertification.setExpiredDate(YearMonth.parse(getXMLText(reader)));
+                        medicineCertificate.setExpiredDate(YearMonth.parse(getXMLText(reader)));
                         isExpiredDate = true;
                     }
                 }
             }
             if (event.isEndElement()) {
                 if (isPermissionDate && isExpiredDate) {
-                    return medicineCertification;
+                    return medicineCertificate;
                 }
             }
 

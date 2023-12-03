@@ -1,65 +1,24 @@
-Antibiotic:
-	name='Zithromax'
-	medicinePackage=[price=7, size=MEDIUM, quantity='unknown']
-	companies=[USAntibiotics, SUN Pharmaceutical Industries]
-	analogs=[Amoxil, Levaquin]
-	shape=CAPSULES
-	dosage=[dose=3, frequency='morning, afternoon, evening']
-	certification=[permissionDate=2013-05, expiredDate=2024-10, id='ITA07482945', registryOrganization='FORZA JUVE']
-	needPrescription=true
-
-Antibiotic:
-	name='Amoxil'
-	medicinePackage=[price=30, size=SMALL, quantity='6']
-	companies=[USAntibiotics, Pfizer]
+Vitamin:
+	name='Kids One'
+	medicinePackage=[price=10, size=SMALL, quantity='60']
+	companies=[Kids One Corporation]
 	analogs=[]
 	shape=AMPOULES
-	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2015-06, expiredDate=2026-07, id='USA19846104', registryOrganization='unknown']
-	needPrescription=true
-
-Vitamin:
-	name='One A Day'
-	medicinePackage=[price=15, size=LARGE, quantity='90']
-	companies=[One A Day Corporation]
-	analogs=[Optimum Nutrition]
-	shape=TABLETS
 	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2020-01, expiredDate=2029-12, id='FRA04652622', registryOrganization='unknown']
-	targetPeople=WOMEN
-	group=D
+	certification=[permissionDate=2025-01, expiredDate=2034-12, id='RUS016581017', registryOrganization='RusPharmacy']
+	targetPeople=CHILDREN
+	group=multi
 
 Vitamin:
-	name='Men's One'
-	medicinePackage=[price=20, size=LARGE, quantity='unknown']
-	companies=[Men's One Corporation]
-	analogs=[Optimum Nutrition, WHEY]
+	name='Geritol'
+	medicinePackage=[price=12, size=MEDIUM, quantity='90']
+	companies=[Geritol Corporation]
+	analogs=[]
 	shape=TABLETS
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2023-01, expiredDate=2032-12, id='RUS016581015', registryOrganization='RusPharmacy']
-	targetPeople=MEN
-	group=K
-
-Vitamin:
-	name='Centrum'
-	medicinePackage=[price=10, size=MEDIUM, quantity='unknown']
-	companies=[Centrum Corporation]
-	analogs=[Optimum Nutrition]
-	shape=TABLETS
-	dosage=[dose=2, frequency='2 times to day']
-	certification=[permissionDate=2019-01, expiredDate=2028-12, id='RUS016581011', registryOrganization='unknown']
+	dosage=[dose=2, frequency='2 time to day']
+	certification=[permissionDate=2022-01, expiredDate=2031-12, id='SWE35355254', registryOrganization='RusPharmacy']
 	targetPeople=ANY
-	group=B
-
-Antibiotic:
-	name='Keflex'
-	medicinePackage=[price=15, size=MEDIUM, quantity='unknown']
-	companies=[Janssen Pharmaceutical]
-	analogs=[Bactrim]
-	shape=POWDER
-	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2019-11, expiredDate=2026-02, id='DEN925401741', registryOrganization='unknown']
-	needPrescription=false
+	group=multi
 
 Vitamin:
 	name='Flintstones'
@@ -72,15 +31,46 @@ Vitamin:
 	targetPeople=CHILDREN
 	group=C
 
-Antibiotic:
-	name='Augmentin'
-	medicinePackage=[price=14, size=SMALL, quantity='10']
-	companies=[USAntibiotics]
-	analogs=[Amoxil]
+Vitamin:
+	name='One A Day'
+	medicinePackage=[price=15, size=LARGE, quantity='90']
+	companies=[One A Day Corporation]
+	analogs=[Optimum Nutrition]
 	shape=TABLETS
-	dosage=[dose=1, frequency='morning and evening']
-	certification=[permissionDate=2015-03, expiredDate=2030-10, id='USA52308239', registryOrganization='WHO']
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2020-01, expiredDate=2029-12, id='FRA04652622', registryOrganization='unknown organization']
+	targetPeople=WOMEN
+	group=D
+
+Antibiotic:
+	name='Zithromax'
+	medicinePackage=[price=7, size=MEDIUM, quantity='unknown quantity']
+	companies=[USAntibiotics, SUN Pharmaceutical Industries]
+	analogs=[Amoxil, Levaquin]
+	shape=CAPSULES
+	dosage=[dose=3, frequency='morning, afternoon, evening']
+	certification=[permissionDate=2013-05, expiredDate=2024-10, id='ITA07482945', registryOrganization='FORZA JUVE']
 	needPrescription=true
+
+Antibiotic:
+	name='Cipro'
+	medicinePackage=[price=20, size=MEDIUM, quantity='15']
+	companies=[Sun Pharmaceutical Industries]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='morning, evening']
+	certification=[permissionDate=2030-08, expiredDate=2020-07, id='CAN92753765', registryOrganization='Canada Pharmacy']
+	needPrescription=false
+
+Antibiotic:
+	name='Keflex'
+	medicinePackage=[price=15, size=MEDIUM, quantity='unknown quantity']
+	companies=[Janssen Pharmaceutical]
+	analogs=[Bactrim]
+	shape=POWDER
+	dosage=[dose=1, frequency='evening']
+	certification=[permissionDate=2019-11, expiredDate=2026-02, id='DEN925401741', registryOrganization='unknown organization']
+	needPrescription=false
 
 Vitamin:
 	name='Duovit'
@@ -94,46 +84,15 @@ Vitamin:
 	group=A
 
 Vitamin:
-	name='Kids One'
-	medicinePackage=[price=10, size=SMALL, quantity='60']
-	companies=[Kids One Corporation]
-	analogs=[]
-	shape=AMPOULES
+	name='Men's One'
+	medicinePackage=[price=20, size=LARGE, quantity='unknown quantity']
+	companies=[Men's One Corporation]
+	analogs=[Optimum Nutrition, WHEY]
+	shape=TABLETS
 	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2025-01, expiredDate=2034-12, id='RUS016581017', registryOrganization='RusPharmacy']
-	targetPeople=CHILDREN
-	group=multi
-
-Antibiotic:
-	name='Flagyl'
-	medicinePackage=[price=20, size=MEDIUM, quantity='30']
-	companies=[USAntibiotics]
-	analogs=[Amoxil, Augmentin]
-	shape=AMPOULES
-	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2010-11, expiredDate=2025-02, id='USA0328400234', registryOrganization='WHO']
-	needPrescription=false
-
-Vitamin:
-	name='Geritol'
-	medicinePackage=[price=12, size=MEDIUM, quantity='90']
-	companies=[Geritol Corporation]
-	analogs=[]
-	shape=TABLETS
-	dosage=[dose=2, frequency='2 time to day']
-	certification=[permissionDate=2022-01, expiredDate=2031-12, id='SWE35355254', registryOrganization='RusPharmacy']
-	targetPeople=ANY
-	group=multi
-
-Antibiotic:
-	name='Cipro'
-	medicinePackage=[price=20, size=MEDIUM, quantity='15']
-	companies=[Sun Pharmaceutical Industries]
-	analogs=[]
-	shape=TABLETS
-	dosage=[dose=2, frequency='morning, evening']
-	certification=[permissionDate=2030-08, expiredDate=2020-07, id='CAN92753765', registryOrganization='Canada Pharmacy']
-	needPrescription=false
+	certification=[permissionDate=2023-01, expiredDate=2032-12, id='RUS016581015', registryOrganization='RusPharmacy']
+	targetPeople=MEN
+	group=K
 
 Vitamin:
 	name='Women's One'
@@ -147,13 +106,13 @@ Vitamin:
 	group=B
 
 Antibiotic:
-	name='Bactrim'
-	medicinePackage=[price=16, size=SMALL, quantity='10']
-	companies=[USAntibiotics, Pfizer]
-	analogs=[]
+	name='Augmentin'
+	medicinePackage=[price=14, size=SMALL, quantity='10']
+	companies=[USAntibiotics]
+	analogs=[Amoxil]
 	shape=TABLETS
-	dosage=[dose=2, frequency='evening']
-	certification=[permissionDate=2033-02, expiredDate=2023-02, id='USA000414055', registryOrganization='unknown']
+	dosage=[dose=1, frequency='morning and evening']
+	certification=[permissionDate=2015-03, expiredDate=2030-10, id='USA52308239', registryOrganization='WHO']
 	needPrescription=true
 
 Antibiotic:
@@ -163,20 +122,29 @@ Antibiotic:
 	analogs=[]
 	shape=POWDER
 	dosage=[dose=1, frequency='morning']
-	certification=[permissionDate=2030-01, expiredDate=2018-02, id='USA2435256809', registryOrganization='unknown']
+	certification=[permissionDate=2030-01, expiredDate=2018-02, id='USA2435256809', registryOrganization='unknown organization']
 	needPrescription=true
-
-=====================================================================================
 
 Antibiotic:
-	name='Zithromax'
-	medicinePackage=[price=7, size=MEDIUM, quantity='unknown']
-	companies=[USAntibiotics, SUN Pharmaceutical Industries]
-	analogs=[Amoxil, Levaquin]
-	shape=CAPSULES
-	dosage=[dose=3, frequency='morning, afternoon, evening']
-	certification=[permissionDate=2013-05, expiredDate=2024-10, id='ITA07482945', registryOrganization='FORZA JUVE']
-	needPrescription=true
+	name='Flagyl'
+	medicinePackage=[price=20, size=MEDIUM, quantity='30']
+	companies=[USAntibiotics]
+	analogs=[Amoxil, Augmentin]
+	shape=AMPOULES
+	dosage=[dose=1, frequency='evening']
+	certification=[permissionDate=2010-11, expiredDate=2025-02, id='USA0328400234', registryOrganization='WHO']
+	needPrescription=false
+
+Vitamin:
+	name='Centrum'
+	medicinePackage=[price=10, size=MEDIUM, quantity='unknown quantity']
+	companies=[Centrum Corporation]
+	analogs=[Optimum Nutrition]
+	shape=TABLETS
+	dosage=[dose=2, frequency='2 times to day']
+	certification=[permissionDate=2019-01, expiredDate=2028-12, id='RUS016581011', registryOrganization='unknown organization']
+	targetPeople=ANY
+	group=B
 
 Antibiotic:
 	name='Amoxil'
@@ -185,51 +153,42 @@ Antibiotic:
 	analogs=[]
 	shape=AMPOULES
 	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2015-06, expiredDate=2026-07, id='USA19846104', registryOrganization='unknown']
+	certification=[permissionDate=2015-06, expiredDate=2026-07, id='USA19846104', registryOrganization='unknown organization']
 	needPrescription=true
 
-Vitamin:
-	name='One A Day'
-	medicinePackage=[price=15, size=LARGE, quantity='90']
-	companies=[One A Day Corporation]
-	analogs=[Optimum Nutrition]
-	shape=TABLETS
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2020-01, expiredDate=2029-12, id='FRA04652622', registryOrganization='unknown']
-	targetPeople=WOMEN
-	group=D
-
-Vitamin:
-	name='Men's One'
-	medicinePackage=[price=20, size=LARGE, quantity='unknown']
-	companies=[Men's One Corporation]
-	analogs=[Optimum Nutrition, WHEY]
-	shape=TABLETS
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2023-01, expiredDate=2032-12, id='RUS016581015', registryOrganization='RusPharmacy']
-	targetPeople=MEN
-	group=K
-
-Vitamin:
-	name='Centrum'
-	medicinePackage=[price=10, size=MEDIUM, quantity='unknown']
-	companies=[Centrum Corporation]
-	analogs=[Optimum Nutrition]
-	shape=TABLETS
-	dosage=[dose=2, frequency='2 times to day']
-	certification=[permissionDate=2019-01, expiredDate=2028-12, id='RUS016581011', registryOrganization='unknown']
-	targetPeople=ANY
-	group=B
-
 Antibiotic:
-	name='Keflex'
-	medicinePackage=[price=15, size=MEDIUM, quantity='unknown']
-	companies=[Janssen Pharmaceutical]
-	analogs=[Bactrim]
-	shape=POWDER
-	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2019-11, expiredDate=2026-02, id='DEN925401741', registryOrganization='unknown']
-	needPrescription=false
+	name='Bactrim'
+	medicinePackage=[price=16, size=SMALL, quantity='10']
+	companies=[USAntibiotics, Pfizer]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='evening']
+	certification=[permissionDate=2033-02, expiredDate=2023-02, id='USA000414055', registryOrganization='unknown organization']
+	needPrescription=true
+
+==============================================================================================================
+
+Vitamin:
+	name='Kids One'
+	medicinePackage=[price=10, size=SMALL, quantity='60']
+	companies=[Kids One Corporation]
+	analogs=[]
+	shape=AMPOULES
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2025-01, expiredDate=2034-12, id='RUS016581017', registryOrganization='RusPharmacy']
+	targetPeople=CHILDREN
+	group=multi
+
+Vitamin:
+	name='Geritol'
+	medicinePackage=[price=12, size=MEDIUM, quantity='90']
+	companies=[Geritol Corporation]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='2 time to day']
+	certification=[permissionDate=2022-01, expiredDate=2031-12, id='SWE35355254', registryOrganization='RusPharmacy']
+	targetPeople=ANY
+	group=multi
 
 Vitamin:
 	name='Flintstones'
@@ -242,15 +201,36 @@ Vitamin:
 	targetPeople=CHILDREN
 	group=C
 
-Antibiotic:
-	name='Augmentin'
-	medicinePackage=[price=14, size=SMALL, quantity='10']
-	companies=[USAntibiotics]
-	analogs=[Amoxil]
+Vitamin:
+	name='One A Day'
+	medicinePackage=[price=15, size=LARGE, quantity='90']
+	companies=[One A Day Corporation]
+	analogs=[Optimum Nutrition]
 	shape=TABLETS
-	dosage=[dose=1, frequency='morning and evening']
-	certification=[permissionDate=2015-03, expiredDate=2030-10, id='USA52308239', registryOrganization='WHO']
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2020-01, expiredDate=2029-12, id='FRA04652622', registryOrganization='unknown organization']
+	targetPeople=WOMEN
+	group=D
+
+Antibiotic:
+	name='Zithromax'
+	medicinePackage=[price=7, size=MEDIUM, quantity='unknown quantity']
+	companies=[USAntibiotics, SUN Pharmaceutical Industries]
+	analogs=[Amoxil, Levaquin]
+	shape=CAPSULES
+	dosage=[dose=3, frequency='morning, afternoon, evening']
+	certification=[permissionDate=2013-05, expiredDate=2024-10, id='ITA07482945', registryOrganization='FORZA JUVE']
 	needPrescription=true
+
+Antibiotic:
+	name='Cipro'
+	medicinePackage=[price=20, size=MEDIUM, quantity='15']
+	companies=[Sun Pharmaceutical Industries]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='morning, evening']
+	certification=[permissionDate=2030-08, expiredDate=2020-07, id='CAN92753765', registryOrganization='Canada Pharmacy']
+	needPrescription=false
 
 Vitamin:
 	name='Duovit'
@@ -263,47 +243,26 @@ Vitamin:
 	targetPeople=MEN
 	group=A
 
-Vitamin:
-	name='Kids One'
-	medicinePackage=[price=10, size=SMALL, quantity='60']
-	companies=[Kids One Corporation]
-	analogs=[]
-	shape=AMPOULES
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2025-01, expiredDate=2034-12, id='RUS016581017', registryOrganization='RusPharmacy']
-	targetPeople=CHILDREN
-	group=multi
-
 Antibiotic:
-	name='Flagyl'
-	medicinePackage=[price=20, size=MEDIUM, quantity='30']
-	companies=[USAntibiotics]
-	analogs=[Amoxil, Augmentin]
-	shape=AMPOULES
+	name='Keflex'
+	medicinePackage=[price=15, size=MEDIUM, quantity='unknown quantity']
+	companies=[Janssen Pharmaceutical]
+	analogs=[Bactrim]
+	shape=POWDER
 	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2010-11, expiredDate=2025-02, id='USA0328400234', registryOrganization='WHO']
+	certification=[permissionDate=2019-11, expiredDate=2026-02, id='DEN925401741', registryOrganization='unknown organization']
 	needPrescription=false
 
 Vitamin:
-	name='Geritol'
-	medicinePackage=[price=12, size=MEDIUM, quantity='90']
-	companies=[Geritol Corporation]
-	analogs=[]
+	name='Men's One'
+	medicinePackage=[price=20, size=LARGE, quantity='unknown quantity']
+	companies=[Men's One Corporation]
+	analogs=[Optimum Nutrition, WHEY]
 	shape=TABLETS
-	dosage=[dose=2, frequency='2 time to day']
-	certification=[permissionDate=2022-01, expiredDate=2031-12, id='SWE35355254', registryOrganization='RusPharmacy']
-	targetPeople=ANY
-	group=multi
-
-Antibiotic:
-	name='Cipro'
-	medicinePackage=[price=20, size=MEDIUM, quantity='15']
-	companies=[Sun Pharmaceutical Industries]
-	analogs=[]
-	shape=TABLETS
-	dosage=[dose=2, frequency='morning, evening']
-	certification=[permissionDate=2030-08, expiredDate=2020-07, id='CAN92753765', registryOrganization='Canada Pharmacy']
-	needPrescription=false
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2023-01, expiredDate=2032-12, id='RUS016581015', registryOrganization='RusPharmacy']
+	targetPeople=MEN
+	group=K
 
 Vitamin:
 	name='Women's One'
@@ -317,13 +276,13 @@ Vitamin:
 	group=B
 
 Antibiotic:
-	name='Bactrim'
-	medicinePackage=[price=16, size=SMALL, quantity='10']
-	companies=[USAntibiotics, Pfizer]
-	analogs=[]
+	name='Augmentin'
+	medicinePackage=[price=14, size=SMALL, quantity='10']
+	companies=[USAntibiotics]
+	analogs=[Amoxil]
 	shape=TABLETS
-	dosage=[dose=2, frequency='evening']
-	certification=[permissionDate=2033-02, expiredDate=2023-02, id='USA000414055', registryOrganization='unknown']
+	dosage=[dose=1, frequency='morning and evening']
+	certification=[permissionDate=2015-03, expiredDate=2030-10, id='USA52308239', registryOrganization='WHO']
 	needPrescription=true
 
 Antibiotic:
@@ -333,20 +292,29 @@ Antibiotic:
 	analogs=[]
 	shape=POWDER
 	dosage=[dose=1, frequency='morning']
-	certification=[permissionDate=2030-01, expiredDate=2018-02, id='USA2435256809', registryOrganization='unknown']
+	certification=[permissionDate=2030-01, expiredDate=2018-02, id='USA2435256809', registryOrganization='unknown organization']
 	needPrescription=true
-
-=====================================================================================
 
 Antibiotic:
-	name='Zithromax'
-	medicinePackage=[price=7, size=MEDIUM, quantity='unknown']
-	companies=[USAntibiotics, SUN Pharmaceutical Industries]
-	analogs=[Amoxil, Levaquin]
-	shape=CAPSULES
-	dosage=[dose=3, frequency='morning, afternoon, evening']
-	certification=[permissionDate=2013-05, expiredDate=2024-10, id='ITA07482945', registryOrganization='FORZA JUVE']
-	needPrescription=true
+	name='Flagyl'
+	medicinePackage=[price=20, size=MEDIUM, quantity='30']
+	companies=[USAntibiotics]
+	analogs=[Amoxil, Augmentin]
+	shape=AMPOULES
+	dosage=[dose=1, frequency='evening']
+	certification=[permissionDate=2010-11, expiredDate=2025-02, id='USA0328400234', registryOrganization='WHO']
+	needPrescription=false
+
+Vitamin:
+	name='Centrum'
+	medicinePackage=[price=10, size=MEDIUM, quantity='unknown quantity']
+	companies=[Centrum Corporation]
+	analogs=[Optimum Nutrition]
+	shape=TABLETS
+	dosage=[dose=2, frequency='2 times to day']
+	certification=[permissionDate=2019-01, expiredDate=2028-12, id='RUS016581011', registryOrganization='unknown organization']
+	targetPeople=ANY
+	group=B
 
 Antibiotic:
 	name='Amoxil'
@@ -355,51 +323,42 @@ Antibiotic:
 	analogs=[]
 	shape=AMPOULES
 	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2015-06, expiredDate=2026-07, id='USA19846104', registryOrganization='unknown']
+	certification=[permissionDate=2015-06, expiredDate=2026-07, id='USA19846104', registryOrganization='unknown organization']
 	needPrescription=true
 
-Vitamin:
-	name='One A Day'
-	medicinePackage=[price=15, size=LARGE, quantity='90']
-	companies=[One A Day Corporation]
-	analogs=[Optimum Nutrition]
-	shape=TABLETS
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2020-01, expiredDate=2029-12, id='FRA04652622', registryOrganization='unknown']
-	targetPeople=WOMEN
-	group=D
-
-Vitamin:
-	name='Men's One'
-	medicinePackage=[price=20, size=LARGE, quantity='unknown']
-	companies=[Men's One Corporation]
-	analogs=[Optimum Nutrition, WHEY]
-	shape=TABLETS
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2023-01, expiredDate=2032-12, id='RUS016581015', registryOrganization='RusPharmacy']
-	targetPeople=MEN
-	group=K
-
-Vitamin:
-	name='Centrum'
-	medicinePackage=[price=10, size=MEDIUM, quantity='unknown']
-	companies=[Centrum Corporation]
-	analogs=[Optimum Nutrition]
-	shape=TABLETS
-	dosage=[dose=2, frequency='2 times to day']
-	certification=[permissionDate=2019-01, expiredDate=2028-12, id='RUS016581011', registryOrganization='unknown']
-	targetPeople=ANY
-	group=B
-
 Antibiotic:
-	name='Keflex'
-	medicinePackage=[price=15, size=MEDIUM, quantity='unknown']
-	companies=[Janssen Pharmaceutical]
-	analogs=[Bactrim]
-	shape=POWDER
-	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2019-11, expiredDate=2026-02, id='DEN925401741', registryOrganization='unknown']
-	needPrescription=false
+	name='Bactrim'
+	medicinePackage=[price=16, size=SMALL, quantity='10']
+	companies=[USAntibiotics, Pfizer]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='evening']
+	certification=[permissionDate=2033-02, expiredDate=2023-02, id='USA000414055', registryOrganization='unknown organization']
+	needPrescription=true
+
+==============================================================================================================
+
+Vitamin:
+	name='Kids One'
+	medicinePackage=[price=10, size=SMALL, quantity='60']
+	companies=[Kids One Corporation]
+	analogs=[]
+	shape=AMPOULES
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2025-01, expiredDate=2034-12, id='RUS016581017', registryOrganization='RusPharmacy']
+	targetPeople=CHILDREN
+	group=multi
+
+Vitamin:
+	name='Geritol'
+	medicinePackage=[price=12, size=MEDIUM, quantity='90']
+	companies=[Geritol Corporation]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='2 time to day']
+	certification=[permissionDate=2022-01, expiredDate=2031-12, id='SWE35355254', registryOrganization='RusPharmacy']
+	targetPeople=ANY
+	group=multi
 
 Vitamin:
 	name='Flintstones'
@@ -412,15 +371,36 @@ Vitamin:
 	targetPeople=CHILDREN
 	group=C
 
-Antibiotic:
-	name='Augmentin'
-	medicinePackage=[price=14, size=SMALL, quantity='10']
-	companies=[USAntibiotics]
-	analogs=[Amoxil]
+Vitamin:
+	name='One A Day'
+	medicinePackage=[price=15, size=LARGE, quantity='90']
+	companies=[One A Day Corporation]
+	analogs=[Optimum Nutrition]
 	shape=TABLETS
-	dosage=[dose=1, frequency='morning and evening']
-	certification=[permissionDate=2015-03, expiredDate=2030-10, id='USA52308239', registryOrganization='WHO']
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2020-01, expiredDate=2029-12, id='FRA04652622', registryOrganization='unknown organization']
+	targetPeople=WOMEN
+	group=D
+
+Antibiotic:
+	name='Zithromax'
+	medicinePackage=[price=7, size=MEDIUM, quantity='unknown quantity']
+	companies=[USAntibiotics, SUN Pharmaceutical Industries]
+	analogs=[Amoxil, Levaquin]
+	shape=CAPSULES
+	dosage=[dose=3, frequency='morning, afternoon, evening']
+	certification=[permissionDate=2013-05, expiredDate=2024-10, id='ITA07482945', registryOrganization='FORZA JUVE']
 	needPrescription=true
+
+Antibiotic:
+	name='Cipro'
+	medicinePackage=[price=20, size=MEDIUM, quantity='15']
+	companies=[Sun Pharmaceutical Industries]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='morning, evening']
+	certification=[permissionDate=2030-08, expiredDate=2020-07, id='CAN92753765', registryOrganization='Canada Pharmacy']
+	needPrescription=false
 
 Vitamin:
 	name='Duovit'
@@ -433,47 +413,26 @@ Vitamin:
 	targetPeople=MEN
 	group=A
 
-Vitamin:
-	name='Kids One'
-	medicinePackage=[price=10, size=SMALL, quantity='60']
-	companies=[Kids One Corporation]
-	analogs=[]
-	shape=AMPOULES
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2025-01, expiredDate=2034-12, id='RUS016581017', registryOrganization='RusPharmacy']
-	targetPeople=CHILDREN
-	group=multi
-
 Antibiotic:
-	name='Flagyl'
-	medicinePackage=[price=20, size=MEDIUM, quantity='30']
-	companies=[USAntibiotics]
-	analogs=[Amoxil, Augmentin]
-	shape=AMPOULES
+	name='Keflex'
+	medicinePackage=[price=15, size=MEDIUM, quantity='unknown quantity']
+	companies=[Janssen Pharmaceutical]
+	analogs=[Bactrim]
+	shape=POWDER
 	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2010-11, expiredDate=2025-02, id='USA0328400234', registryOrganization='WHO']
+	certification=[permissionDate=2019-11, expiredDate=2026-02, id='DEN925401741', registryOrganization='unknown organization']
 	needPrescription=false
 
 Vitamin:
-	name='Geritol'
-	medicinePackage=[price=12, size=MEDIUM, quantity='90']
-	companies=[Geritol Corporation]
-	analogs=[]
+	name='Men's One'
+	medicinePackage=[price=20, size=LARGE, quantity='unknown quantity']
+	companies=[Men's One Corporation]
+	analogs=[Optimum Nutrition, WHEY]
 	shape=TABLETS
-	dosage=[dose=2, frequency='2 time to day']
-	certification=[permissionDate=2022-01, expiredDate=2031-12, id='SWE35355254', registryOrganization='RusPharmacy']
-	targetPeople=ANY
-	group=multi
-
-Antibiotic:
-	name='Cipro'
-	medicinePackage=[price=20, size=MEDIUM, quantity='15']
-	companies=[Sun Pharmaceutical Industries]
-	analogs=[]
-	shape=TABLETS
-	dosage=[dose=2, frequency='morning, evening']
-	certification=[permissionDate=2030-08, expiredDate=2020-07, id='CAN92753765', registryOrganization='Canada Pharmacy']
-	needPrescription=false
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2023-01, expiredDate=2032-12, id='RUS016581015', registryOrganization='RusPharmacy']
+	targetPeople=MEN
+	group=K
 
 Vitamin:
 	name='Women's One'
@@ -487,13 +446,13 @@ Vitamin:
 	group=B
 
 Antibiotic:
-	name='Bactrim'
-	medicinePackage=[price=16, size=SMALL, quantity='10']
-	companies=[USAntibiotics, Pfizer]
-	analogs=[]
+	name='Augmentin'
+	medicinePackage=[price=14, size=SMALL, quantity='10']
+	companies=[USAntibiotics]
+	analogs=[Amoxil]
 	shape=TABLETS
-	dosage=[dose=2, frequency='evening']
-	certification=[permissionDate=2033-02, expiredDate=2023-02, id='USA000414055', registryOrganization='unknown']
+	dosage=[dose=1, frequency='morning and evening']
+	certification=[permissionDate=2015-03, expiredDate=2030-10, id='USA52308239', registryOrganization='WHO']
 	needPrescription=true
 
 Antibiotic:
@@ -503,20 +462,29 @@ Antibiotic:
 	analogs=[]
 	shape=POWDER
 	dosage=[dose=1, frequency='morning']
-	certification=[permissionDate=2030-01, expiredDate=2018-02, id='USA2435256809', registryOrganization='unknown']
+	certification=[permissionDate=2030-01, expiredDate=2018-02, id='USA2435256809', registryOrganization='unknown organization']
 	needPrescription=true
-
-=====================================================================================
 
 Antibiotic:
-	name='Zithromax'
-	medicinePackage=[price=7, size=MEDIUM, quantity='unknown']
-	companies=[USAntibiotics, SUN Pharmaceutical Industries]
-	analogs=[Amoxil, Levaquin]
-	shape=CAPSULES
-	dosage=[dose=3, frequency='morning, afternoon, evening']
-	certification=[permissionDate=2013-05, expiredDate=2024-10, id='ITA07482945', registryOrganization='FORZA JUVE']
-	needPrescription=true
+	name='Flagyl'
+	medicinePackage=[price=20, size=MEDIUM, quantity='30']
+	companies=[USAntibiotics]
+	analogs=[Amoxil, Augmentin]
+	shape=AMPOULES
+	dosage=[dose=1, frequency='evening']
+	certification=[permissionDate=2010-11, expiredDate=2025-02, id='USA0328400234', registryOrganization='WHO']
+	needPrescription=false
+
+Vitamin:
+	name='Centrum'
+	medicinePackage=[price=10, size=MEDIUM, quantity='unknown quantity']
+	companies=[Centrum Corporation]
+	analogs=[Optimum Nutrition]
+	shape=TABLETS
+	dosage=[dose=2, frequency='2 times to day']
+	certification=[permissionDate=2019-01, expiredDate=2028-12, id='RUS016581011', registryOrganization='unknown organization']
+	targetPeople=ANY
+	group=B
 
 Antibiotic:
 	name='Amoxil'
@@ -525,51 +493,42 @@ Antibiotic:
 	analogs=[]
 	shape=AMPOULES
 	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2015-06, expiredDate=2026-07, id='USA19846104', registryOrganization='unknown']
+	certification=[permissionDate=2015-06, expiredDate=2026-07, id='USA19846104', registryOrganization='unknown organization']
 	needPrescription=true
 
-Vitamin:
-	name='One A Day'
-	medicinePackage=[price=15, size=LARGE, quantity='90']
-	companies=[One A Day Corporation]
-	analogs=[Optimum Nutrition]
-	shape=TABLETS
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2020-01, expiredDate=2029-12, id='FRA04652622', registryOrganization='unknown']
-	targetPeople=WOMEN
-	group=D
-
-Vitamin:
-	name='Men's One'
-	medicinePackage=[price=20, size=LARGE, quantity='unknown']
-	companies=[Men's One Corporation]
-	analogs=[Optimum Nutrition, WHEY]
-	shape=TABLETS
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2023-01, expiredDate=2032-12, id='RUS016581015', registryOrganization='RusPharmacy']
-	targetPeople=MEN
-	group=K
-
-Vitamin:
-	name='Centrum'
-	medicinePackage=[price=10, size=MEDIUM, quantity='unknown']
-	companies=[Centrum Corporation]
-	analogs=[Optimum Nutrition]
-	shape=TABLETS
-	dosage=[dose=2, frequency='2 times to day']
-	certification=[permissionDate=2019-01, expiredDate=2028-12, id='RUS016581011', registryOrganization='unknown']
-	targetPeople=ANY
-	group=B
-
 Antibiotic:
-	name='Keflex'
-	medicinePackage=[price=15, size=MEDIUM, quantity='unknown']
-	companies=[Janssen Pharmaceutical]
-	analogs=[Bactrim]
-	shape=POWDER
-	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2019-11, expiredDate=2026-02, id='DEN925401741', registryOrganization='unknown']
-	needPrescription=false
+	name='Bactrim'
+	medicinePackage=[price=16, size=SMALL, quantity='10']
+	companies=[USAntibiotics, Pfizer]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='evening']
+	certification=[permissionDate=2033-02, expiredDate=2023-02, id='USA000414055', registryOrganization='unknown organization']
+	needPrescription=true
+
+==============================================================================================================
+
+Vitamin:
+	name='Kids One'
+	medicinePackage=[price=10, size=SMALL, quantity='60']
+	companies=[Kids One Corporation]
+	analogs=[]
+	shape=AMPOULES
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2025-01, expiredDate=2034-12, id='RUS016581017', registryOrganization='RusPharmacy']
+	targetPeople=CHILDREN
+	group=multi
+
+Vitamin:
+	name='Geritol'
+	medicinePackage=[price=12, size=MEDIUM, quantity='90']
+	companies=[Geritol Corporation]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='2 time to day']
+	certification=[permissionDate=2022-01, expiredDate=2031-12, id='SWE35355254', registryOrganization='RusPharmacy']
+	targetPeople=ANY
+	group=multi
 
 Vitamin:
 	name='Flintstones'
@@ -582,15 +541,36 @@ Vitamin:
 	targetPeople=CHILDREN
 	group=C
 
-Antibiotic:
-	name='Augmentin'
-	medicinePackage=[price=14, size=SMALL, quantity='10']
-	companies=[USAntibiotics]
-	analogs=[Amoxil]
+Vitamin:
+	name='One A Day'
+	medicinePackage=[price=15, size=LARGE, quantity='90']
+	companies=[One A Day Corporation]
+	analogs=[Optimum Nutrition]
 	shape=TABLETS
-	dosage=[dose=1, frequency='morning and evening']
-	certification=[permissionDate=2015-03, expiredDate=2030-10, id='USA52308239', registryOrganization='WHO']
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2020-01, expiredDate=2029-12, id='FRA04652622', registryOrganization='unknown organization']
+	targetPeople=WOMEN
+	group=D
+
+Antibiotic:
+	name='Zithromax'
+	medicinePackage=[price=7, size=MEDIUM, quantity='unknown quantity']
+	companies=[USAntibiotics, SUN Pharmaceutical Industries]
+	analogs=[Amoxil, Levaquin]
+	shape=CAPSULES
+	dosage=[dose=3, frequency='morning, afternoon, evening']
+	certification=[permissionDate=2013-05, expiredDate=2024-10, id='ITA07482945', registryOrganization='FORZA JUVE']
 	needPrescription=true
+
+Antibiotic:
+	name='Cipro'
+	medicinePackage=[price=20, size=MEDIUM, quantity='15']
+	companies=[Sun Pharmaceutical Industries]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='morning, evening']
+	certification=[permissionDate=2030-08, expiredDate=2020-07, id='CAN92753765', registryOrganization='Canada Pharmacy']
+	needPrescription=false
 
 Vitamin:
 	name='Duovit'
@@ -603,47 +583,26 @@ Vitamin:
 	targetPeople=MEN
 	group=A
 
-Vitamin:
-	name='Kids One'
-	medicinePackage=[price=10, size=SMALL, quantity='60']
-	companies=[Kids One Corporation]
-	analogs=[]
-	shape=AMPOULES
-	dosage=[dose=1, frequency='1 time to day']
-	certification=[permissionDate=2025-01, expiredDate=2034-12, id='RUS016581017', registryOrganization='RusPharmacy']
-	targetPeople=CHILDREN
-	group=multi
-
 Antibiotic:
-	name='Flagyl'
-	medicinePackage=[price=20, size=MEDIUM, quantity='30']
-	companies=[USAntibiotics]
-	analogs=[Amoxil, Augmentin]
-	shape=AMPOULES
+	name='Keflex'
+	medicinePackage=[price=15, size=MEDIUM, quantity='unknown quantity']
+	companies=[Janssen Pharmaceutical]
+	analogs=[Bactrim]
+	shape=POWDER
 	dosage=[dose=1, frequency='evening']
-	certification=[permissionDate=2010-11, expiredDate=2025-02, id='USA0328400234', registryOrganization='WHO']
+	certification=[permissionDate=2019-11, expiredDate=2026-02, id='DEN925401741', registryOrganization='unknown organization']
 	needPrescription=false
 
 Vitamin:
-	name='Geritol'
-	medicinePackage=[price=12, size=MEDIUM, quantity='90']
-	companies=[Geritol Corporation]
-	analogs=[]
+	name='Men's One'
+	medicinePackage=[price=20, size=LARGE, quantity='unknown quantity']
+	companies=[Men's One Corporation]
+	analogs=[Optimum Nutrition, WHEY]
 	shape=TABLETS
-	dosage=[dose=2, frequency='2 time to day']
-	certification=[permissionDate=2022-01, expiredDate=2031-12, id='SWE35355254', registryOrganization='RusPharmacy']
-	targetPeople=ANY
-	group=multi
-
-Antibiotic:
-	name='Cipro'
-	medicinePackage=[price=20, size=MEDIUM, quantity='15']
-	companies=[Sun Pharmaceutical Industries]
-	analogs=[]
-	shape=TABLETS
-	dosage=[dose=2, frequency='morning, evening']
-	certification=[permissionDate=2030-08, expiredDate=2020-07, id='CAN92753765', registryOrganization='Canada Pharmacy']
-	needPrescription=false
+	dosage=[dose=1, frequency='1 time to day']
+	certification=[permissionDate=2023-01, expiredDate=2032-12, id='RUS016581015', registryOrganization='RusPharmacy']
+	targetPeople=MEN
+	group=K
 
 Vitamin:
 	name='Women's One'
@@ -657,13 +616,13 @@ Vitamin:
 	group=B
 
 Antibiotic:
-	name='Bactrim'
-	medicinePackage=[price=16, size=SMALL, quantity='10']
-	companies=[USAntibiotics, Pfizer]
-	analogs=[]
+	name='Augmentin'
+	medicinePackage=[price=14, size=SMALL, quantity='10']
+	companies=[USAntibiotics]
+	analogs=[Amoxil]
 	shape=TABLETS
-	dosage=[dose=2, frequency='evening']
-	certification=[permissionDate=2033-02, expiredDate=2023-02, id='USA000414055', registryOrganization='unknown']
+	dosage=[dose=1, frequency='morning and evening']
+	certification=[permissionDate=2015-03, expiredDate=2030-10, id='USA52308239', registryOrganization='WHO']
 	needPrescription=true
 
 Antibiotic:
@@ -673,8 +632,49 @@ Antibiotic:
 	analogs=[]
 	shape=POWDER
 	dosage=[dose=1, frequency='morning']
-	certification=[permissionDate=2030-01, expiredDate=2018-02, id='USA2435256809', registryOrganization='unknown']
+	certification=[permissionDate=2030-01, expiredDate=2018-02, id='USA2435256809', registryOrganization='unknown organization']
 	needPrescription=true
 
-=====================================================================================
+Antibiotic:
+	name='Flagyl'
+	medicinePackage=[price=20, size=MEDIUM, quantity='30']
+	companies=[USAntibiotics]
+	analogs=[Amoxil, Augmentin]
+	shape=AMPOULES
+	dosage=[dose=1, frequency='evening']
+	certification=[permissionDate=2010-11, expiredDate=2025-02, id='USA0328400234', registryOrganization='WHO']
+	needPrescription=false
+
+Vitamin:
+	name='Centrum'
+	medicinePackage=[price=10, size=MEDIUM, quantity='unknown quantity']
+	companies=[Centrum Corporation]
+	analogs=[Optimum Nutrition]
+	shape=TABLETS
+	dosage=[dose=2, frequency='2 times to day']
+	certification=[permissionDate=2019-01, expiredDate=2028-12, id='RUS016581011', registryOrganization='unknown organization']
+	targetPeople=ANY
+	group=B
+
+Antibiotic:
+	name='Amoxil'
+	medicinePackage=[price=30, size=SMALL, quantity='6']
+	companies=[USAntibiotics, Pfizer]
+	analogs=[]
+	shape=AMPOULES
+	dosage=[dose=1, frequency='evening']
+	certification=[permissionDate=2015-06, expiredDate=2026-07, id='USA19846104', registryOrganization='unknown organization']
+	needPrescription=true
+
+Antibiotic:
+	name='Bactrim'
+	medicinePackage=[price=16, size=SMALL, quantity='10']
+	companies=[USAntibiotics, Pfizer]
+	analogs=[]
+	shape=TABLETS
+	dosage=[dose=2, frequency='evening']
+	certification=[permissionDate=2033-02, expiredDate=2023-02, id='USA000414055', registryOrganization='unknown organization']
+	needPrescription=true
+
+==============================================================================================================
 

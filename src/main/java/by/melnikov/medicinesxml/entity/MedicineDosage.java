@@ -1,10 +1,16 @@
 package by.melnikov.medicinesxml.entity;
 
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
 import java.util.StringJoiner;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Dosage")
 public class MedicineDosage {
+    @XmlAttribute(name = "dose", required = true)
+    @XmlSchemaType(name = "positiveInteger")
     private int dose;
+    @XmlAttribute(name = "frequency", required = true)
     private String frequency;
 
     public MedicineDosage() {

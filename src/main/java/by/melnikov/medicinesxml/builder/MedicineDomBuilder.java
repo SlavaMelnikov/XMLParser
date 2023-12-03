@@ -1,8 +1,8 @@
 package by.melnikov.medicinesxml.builder;
 
+import static by.melnikov.medicinesxml.builder.MedicineXmlNode.*;
 import by.melnikov.medicinesxml.entity.*;
 import by.melnikov.medicinesxml.exception.MedicineCustomException;
-import static by.melnikov.medicinesxml.builder.MedicineXmlNode.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -18,8 +18,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MedicineDomBuilder extends AbstractMedicineBuilder {
-    private Set<Medicine> medicines;
-    private DocumentBuilder documentBuilder;
+    private final Set<Medicine> medicines;
+    private final DocumentBuilder documentBuilder;
 
     public MedicineDomBuilder() throws MedicineCustomException{
         medicines = new HashSet<>();
@@ -57,7 +57,7 @@ public class MedicineDomBuilder extends AbstractMedicineBuilder {
         } catch (IOException e) {
             throw new MedicineCustomException("File error or I/O error: ", e);
         } catch (SAXException e) {
-            throw new MedicineCustomException("Parsing failure: ", e);
+            throw new MedicineCustomException("Parsing error: ", e);
         }
     }
 
@@ -68,13 +68,13 @@ public class MedicineDomBuilder extends AbstractMedicineBuilder {
 
         MedicinePackage medicinePackage = buildMedicinePackage(medicinePackageElement);
         MedicineDosage medicineDosage = buildMedicineDosage(dosageElement);
-        MedicineCertification medicineCertification = buildMedicineCertification(certificationElement);
+        MedicineCertificate medicineCertificate = buildMedicineCertification(certificationElement);
 
-        Medicine medicine = null;
+        Medicine medicine;
         if (ANTIBIOTIC.getTag().equals(medicineElement.getNodeName())) {
              medicine = new Antibiotic();
             ((Antibiotic) medicine).setNeedPrescription(Boolean.parseBoolean(getElementTextContent(medicineElement, NEED_PRESCRIPTION.getTag())));
-        } else if (VITAMIN.getTag().equals(medicineElement.getNodeName())){
+        } else {
             medicine = new Vitamin();
             ((Vitamin) medicine).setTarget(Vitamin.Target.valueOf(medicineElement.getAttribute(FOR.getTag()).toUpperCase()));
             ((Vitamin) medicine).setGroup(medicineElement.getAttribute(GROUP.getTag()));
@@ -94,7 +94,7 @@ public class MedicineDomBuilder extends AbstractMedicineBuilder {
         medicine.setShape(Medicine.Shape.valueOf(getElementTextContent(medicineElement, SHAPE.getTag()).toUpperCase()));
         medicine.setMedicinePackage(medicinePackage);
         medicine.setDosage(medicineDosage);
-        medicine.setCertification(medicineCertification);
+        medicine.setCertification(medicineCertificate);
         return medicine;
     }
 
@@ -115,21 +115,20 @@ public class MedicineDomBuilder extends AbstractMedicineBuilder {
         return medicineDosage;
     }
 
-    private MedicineCertification buildMedicineCertification(Element certificationElement) {
-        MedicineCertification medicineCertification = new MedicineCertification();
-        medicineCertification.setId(certificationElement.getAttribute(REGISTRATION_NUMBER.getTag()));
-        medicineCertification.setPermissionDate(YearMonth.parse(getElementTextContent(certificationElement, PERMISSION_DATE.getTag())));
-        medicineCertification.setExpiredDate(YearMonth.parse(getElementTextContent(certificationElement, EXPIRED_DATE.getTag())));
+    private MedicineCertificate buildMedicineCertification(Element certificationElement) {
+        MedicineCertificate medicineCertificate = new MedicineCertificate();
+        medicineCertificate.setId(certificationElement.getAttribute(REGISTRATION_NUMBER.getTag()));
+        medicineCertificate.setPermissionDate(YearMonth.parse(getElementTextContent(certificationElement, PERMISSION_DATE.getTag())));
+        medicineCertificate.setExpiredDate(YearMonth.parse(getElementTextContent(certificationElement, EXPIRED_DATE.getTag())));
         String registryOrganizationContent = certificationElement.getAttribute(REGISTRY_ORGANIZATION.getTag());
-        String registryOrganization = registryOrganizationContent.isEmpty() ? MedicineCertification.DEFAULT_REGISTRY_ORGANIZATION : registryOrganizationContent;
-        medicineCertification.setRegistryOrganization(registryOrganization);
-        return medicineCertification;
+        String registryOrganization = registryOrganizationContent.isEmpty() ? MedicineCertificate.DEFAULT_REGISTRY_ORGANIZATION : registryOrganizationContent;
+        medicineCertificate.setRegistryOrganization(registryOrganization);
+        return medicineCertificate;
     }
 
     private String getElementTextContent(Element element, String elementName) {
         NodeList nList = element.getElementsByTagName(elementName);
         Node node = nList.item(0);
-        String text = node.getTextContent();
-        return text;
+        return node.getTextContent();
     }
 }

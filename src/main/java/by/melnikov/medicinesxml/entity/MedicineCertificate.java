@@ -1,20 +1,36 @@
 package by.melnikov.medicinesxml.entity;
 
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.YearMonth;
 import java.util.Objects;
 import java.util.StringJoiner;
 
-public class MedicineCertification {
-    public static final String DEFAULT_REGISTRY_ORGANIZATION = "unknown";
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Сertificate", propOrder = {
+        "permissionDate",
+        "expiredDate"
+})
+public class MedicineCertificate {
+    public static final String DEFAULT_REGISTRY_ORGANIZATION = "unknown organization";
+    @XmlElement(name = "permission-date", required = true)
+    @XmlSchemaType(name = "gYearMonth")
     private YearMonth permissionDate;
+    @XmlElement(name = "expired-date", required = true)
+    @XmlSchemaType(name = "gYearMonth")
     private YearMonth expiredDate;
+    @XmlAttribute(name = "registration-number", required = true)
+    @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
+    @XmlID
     private String id;
+    @XmlAttribute(name = "registry-organization")
     private String registryOrganization;
 
-    public MedicineCertification() {
+    public MedicineCertificate() {
     }
 
-    public MedicineCertification(YearMonth permissionDate, YearMonth expiredDate, String id, String registryOrganization) {
+    public MedicineCertificate(YearMonth permissionDate, YearMonth expiredDate, String id, String registryOrganization) {
         this.permissionDate = permissionDate;
         this.expiredDate = expiredDate;
         this.id = id;
@@ -58,7 +74,7 @@ public class MedicineCertification {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        MedicineCertification that = (MedicineCertification) o;
+        MedicineCertificate that = (MedicineCertificate) o;
 
         if (!Objects.equals(permissionDate, that.permissionDate))
             return false;

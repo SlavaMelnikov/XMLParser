@@ -1,21 +1,29 @@
 package by.melnikov.medicinesxml.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Objects;
 import java.util.Set;
 import java.util.StringJoiner;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Vitamin")
 public class Vitamin extends Medicine {
 
     public enum Target {
         ANY, MEN, WOMEN, CHILDREN
     }
+    @XmlAttribute(name = "for", required = true)
     private Target target;
+    @XmlAttribute(name = "group", required = true)
     private String group;
 
     public Vitamin() {
     }
 
-    public Vitamin(String name, MedicinePackage medicinePackage, Set<String> companies, Set<String> analogs, Shape shape, MedicineDosage dosage, MedicineCertification certification, Target target, String group) {
+    public Vitamin(String name, MedicinePackage medicinePackage, Set<String> companies, Set<String> analogs, Shape shape, MedicineDosage dosage, MedicineCertificate certification, Target target, String group) {
         super(name, medicinePackage, companies, analogs, shape, dosage, certification);
         this.target = target;
         this.group = group;

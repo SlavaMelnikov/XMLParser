@@ -15,15 +15,13 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class MedicineSaxBuilder extends AbstractMedicineBuilder {
+    private final MedicineHandler medicineHandler;
+    private final XMLReader reader;
     private Set<Medicine> medicines;
-    private MedicineHandler medicineHandler;
-    private MedicineErrorHandler medicineErrorHandler;
-    private XMLReader reader;
 
     public MedicineSaxBuilder() throws MedicineCustomException {
         medicines = new HashSet<>();
         medicineHandler = new MedicineHandler();
-        medicineErrorHandler = new MedicineErrorHandler();
         SAXParserFactory factory = SAXParserFactory.newInstance();
         try {
             SAXParser saxParser = factory.newSAXParser();
@@ -31,7 +29,7 @@ public class MedicineSaxBuilder extends AbstractMedicineBuilder {
         } catch (ParserConfigurationException | SAXException e) {
             throw new MedicineCustomException("SAX parser creating error", e);
         }
-        reader.setErrorHandler(medicineErrorHandler);
+        reader.setErrorHandler(new MedicineErrorHandler());
         reader.setContentHandler(medicineHandler);
     }
 

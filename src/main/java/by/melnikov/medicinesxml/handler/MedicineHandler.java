@@ -1,12 +1,9 @@
 package by.melnikov.medicinesxml.handler;
 
+import static by.melnikov.medicinesxml.builder.MedicineXmlNode.*;
 import by.melnikov.medicinesxml.builder.MedicineXmlNode;
 import by.melnikov.medicinesxml.entity.*;
-
-import static by.melnikov.medicinesxml.builder.MedicineXmlNode.*;
-
 import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.time.YearMonth;
@@ -15,24 +12,20 @@ import java.util.Set;
 
 
 public class MedicineHandler extends DefaultHandler {
-    private Set<Medicine> medicines;
+    private final Set<Medicine> medicines;
     private Medicine currentMedicine;
     private MedicineXmlNode currentXmlNode;
-    private MedicinePackage medicinePackage;
-    private MedicineDosage medicineDosage;
-    private MedicineCertification medicineCertification;
+    private MedicineCertificate medicineCertificate;
 
     public MedicineHandler() {
         medicines = new HashSet<>();
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes atts) throws SAXException {
+    public void startElement(String uri, String localName, String qName, Attributes atts) {
         currentXmlNode = MedicineXmlNode.valueOf(qName.replaceAll("-", "_").toUpperCase());
         switch (currentXmlNode) {
-            case ANTIBIOTIC -> {
-                currentMedicine = new Antibiotic();
-            }
+            case ANTIBIOTIC -> currentMedicine = new Antibiotic();
             case VITAMIN -> {
                 Vitamin vitamin = new Vitamin();
                 for (int i = 0; i < atts.getLength(); i++) {
@@ -47,7 +40,7 @@ public class MedicineHandler extends DefaultHandler {
             }
             case PACKAGE -> {
                 boolean isQuantity = false;
-                medicinePackage = new MedicinePackage();
+                MedicinePackage medicinePackage = new MedicinePackage();
                 for (int i = 0; i < atts.getLength(); i++) {
                     String att = atts.getValue(i);
                     if (PRICE.getTag().equals(atts.getQName(i))) {
@@ -65,7 +58,7 @@ public class MedicineHandler extends DefaultHandler {
                 currentMedicine.setMedicinePackage(medicinePackage);
             }
             case DOSAGE -> {
-                medicineDosage = new MedicineDosage();
+                MedicineDosage medicineDosage = new MedicineDosage();
                 for (int i = 0; i < atts.getLength(); i++) {
                     String att = atts.getValue(i);
                     if (DOSE.getTag().equals(atts.getQName(i))) {
@@ -78,33 +71,33 @@ public class MedicineHandler extends DefaultHandler {
             }
             case CERTIFICATE -> {
                 boolean isRegistryOrganization = false;
-                medicineCertification = new MedicineCertification();
+                medicineCertificate = new MedicineCertificate();
                 for (int i = 0; i < atts.getLength(); i++) {
                     String att = atts.getValue(i);
                     if (REGISTRATION_NUMBER.getTag().equals(atts.getQName(i))) {
-                        medicineCertification.setId(att);
+                        medicineCertificate.setId(att);
                     } else if (REGISTRY_ORGANIZATION.getTag().equals(atts.getQName(i))) {
-                        medicineCertification.setRegistryOrganization(att);
+                        medicineCertificate.setRegistryOrganization(att);
                         isRegistryOrganization = true;
                     }
                 }
                 if (!isRegistryOrganization) {
-                    medicineCertification.setRegistryOrganization(MedicineCertification.DEFAULT_REGISTRY_ORGANIZATION);
+                    medicineCertificate.setRegistryOrganization(MedicineCertificate.DEFAULT_REGISTRY_ORGANIZATION);
                 }
-                currentMedicine.setCertification(medicineCertification);
+                currentMedicine.setCertification(medicineCertificate);
             }
         }
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) {
         if (ANTIBIOTIC.getTag().equals(qName) || VITAMIN.getTag().equals(qName)) {
             medicines.add(currentMedicine);
         }
     }
 
     @Override
-    public void characters(char[] ch, int start, int length) throws SAXException {
+    public void characters(char[] ch, int start, int length) {
         String data = new String(ch, start, length);
         if (currentXmlNode != null) {
             switch (currentXmlNode) {
@@ -112,8 +105,8 @@ public class MedicineHandler extends DefaultHandler {
                 case COMPANY -> currentMedicine.addCompany(data);
                 case ANALOG -> currentMedicine.addAnalog(data);
                 case SHAPE -> currentMedicine.setShape(Medicine.Shape.valueOf(data.toUpperCase()));
-                case PERMISSION_DATE -> medicineCertification.setPermissionDate(YearMonth.parse(data));
-                case EXPIRED_DATE -> medicineCertification.setExpiredDate(YearMonth.parse(data));
+                case PERMISSION_DATE -> medicineCertificate.setPermissionDate(YearMonth.parse(data));
+                case EXPIRED_DATE -> medicineCertificate.setExpiredDate(YearMonth.parse(data));
                 case NEED_PRESCRIPTION -> ((Antibiotic) currentMedicine).setNeedPrescription(Boolean.parseBoolean(data));
             }
         }

@@ -32,12 +32,7 @@
                     </restriction>
                 </simpleType>
             </element>
-            <element name="dosage">
-                <complexType>
-                    <attribute name="dose" type="positiveInteger" use="required"/>
-                    <attribute name="frequency" type="string" use="required"/>
-                </complexType>
-            </element>
+            <element name="dosage" type="tns:Dosage"/>
             <element name="certificate" type="tns:Certificate"/>
         </sequence>
     </complexType>
@@ -89,6 +84,11 @@
                 </restriction>
             </simpleType>
         </attribute>
+    </complexType>
+
+    <complexType name="Dosage">
+        <attribute name="dose" type="positiveInteger" use="required"/>
+        <attribute name="frequency" type="string" use="required"/>
     </complexType>
 
     <complexType name="Certificate">

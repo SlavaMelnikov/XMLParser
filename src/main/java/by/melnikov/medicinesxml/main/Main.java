@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) throws MedicineCustomException {
         MedicinesXmlValidator.validateXMLFile(XML_FILE, XSD_FILE);
         MedicineBuilderFactory factory = MedicineBuilderFactory.getInstance();
-        String[] parsers = {"DOM", "sax", "stax stream", "Stax-events"};
+        String[] parsers = {"DOM", "sax", "stax stream", "Stax-events", "JAXB"};
         for (String parser : parsers) {
             AbstractMedicineBuilder builder = factory.createMedicineBuilder(parser);
             builder.buildSetMedicines(XML_FILE);
@@ -35,9 +35,9 @@ public class Main {
                 Files.write(path, medicine.toString().getBytes(), StandardOpenOption.APPEND);
                 Files.writeString(path, "\n", StandardOpenOption.APPEND);
             }
-            Files.writeString(path, "=====================================================================================\n\n", StandardOpenOption.APPEND);
+            Files.writeString(path, "==============================================================================================================\n\n", StandardOpenOption.APPEND);
         } catch (IOException e) {
-            throw new MedicineCustomException("write to file error", e);
+            throw new MedicineCustomException("writing to file error", e);
         }
     }
 }

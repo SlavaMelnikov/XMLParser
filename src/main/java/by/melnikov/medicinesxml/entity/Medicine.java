@@ -1,26 +1,47 @@
 package by.melnikov.medicinesxml.entity;
 
+import javax.xml.bind.annotation.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.StringJoiner;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Medicine", propOrder = {
+        "name",
+        "medicinePackage",
+        "companies",
+        "analogs",
+        "shape",
+        "dosage",
+        "certification"
+})
+@XmlSeeAlso({
+        Antibiotic.class,
+        Vitamin.class
+})
 public abstract class Medicine {
     public enum Shape {
         TABLETS, CAPSULES, POWDER, AMPOULES
     }
+    @XmlElement(required = true)
     private String name;
+    @XmlElement(name = "package", required = true)
     private MedicinePackage medicinePackage;
+    @XmlElement(required = true)
     private Set<String> companies = new HashSet<>();
     private Set<String> analogs = new HashSet<>();
+    @XmlElement(required = true)
     private Shape shape;
+    @XmlElement(name = "dosage", required = true)
     private MedicineDosage dosage;
-    private MedicineCertification certification;
+    @XmlElement(name = "certificate", required = true)
+    private MedicineCertificate certification;
 
     public Medicine() {
     }
 
-    public Medicine(String name, MedicinePackage medicinePackage, Set<String> companies, Set<String> analogs, Shape shape, MedicineDosage dosage, MedicineCertification certification) {
+    public Medicine(String name, MedicinePackage medicinePackage, Set<String> companies, Set<String> analogs, Shape shape, MedicineDosage dosage, MedicineCertificate certification) {
         this.name = name;
         this.medicinePackage = medicinePackage;
         this.companies = companies;
@@ -84,11 +105,11 @@ public abstract class Medicine {
         this.dosage = dosage;
     }
 
-    public MedicineCertification getCertification() {
+    public MedicineCertificate getCertification() {
         return certification;
     }
 
-    public void setCertification(MedicineCertification certification) {
+    public void setCertification(MedicineCertificate certification) {
         this.certification = certification;
     }
 

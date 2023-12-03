@@ -1,15 +1,24 @@
 package by.melnikov.medicinesxml.entity;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Set;
 import java.util.StringJoiner;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Antibiotic", propOrder = {
+        "needPrescription"
+})
 public class Antibiotic extends Medicine {
+    @XmlElement(name = "need-prescription")
     private boolean needPrescription;
 
     public Antibiotic() {
     }
 
-    public Antibiotic(String name, MedicinePackage medicinePackage, Set<String> companies, Set<String> analogs, Medicine.Shape shape, MedicineDosage dosage, MedicineCertification certification, boolean needPrescription) {
+    public Antibiotic(String name, MedicinePackage medicinePackage, Set<String> companies, Set<String> analogs, Medicine.Shape shape, MedicineDosage dosage, MedicineCertificate certification, boolean needPrescription) {
         super(name, medicinePackage, companies, analogs, shape, dosage, certification);
         this.needPrescription = needPrescription;
     }

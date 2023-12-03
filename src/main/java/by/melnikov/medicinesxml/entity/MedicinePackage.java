@@ -1,15 +1,22 @@
 package by.melnikov.medicinesxml.entity;
 
+import javax.xml.bind.annotation.*;
 import java.util.Objects;
 import java.util.StringJoiner;
 
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Package")
 public class MedicinePackage {
     public enum Size {
         SMALL, MEDIUM, LARGE
     }
-    public static final String DEFAULT_QUANTITY = "unknown";
+    public static final String DEFAULT_QUANTITY = "unknown quantity";
+    @XmlAttribute(name = "price", required = true)
+    @XmlSchemaType(name = "positiveInteger")
     private int price;
+    @XmlAttribute(name = "size", required = true)
     private Size size;
+    @XmlAttribute(name = "quantity")
     private String quantity;
 
     public MedicinePackage() {

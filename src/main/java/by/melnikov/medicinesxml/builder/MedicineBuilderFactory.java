@@ -33,9 +33,9 @@ public class MedicineBuilderFactory {
             case STAX_EVENTS -> {
                 return new MedicineStaxEventsBuilder();
             }
-//            case JAXB -> {
-//                return new MedicineJaxbBuilder();
-//            }
+            case JAXB -> {
+                return new MedicineJaxbBuilder();
+            }
             default -> throw new MedicineCustomException("not found such a parser: " + type.name());
         }
     }

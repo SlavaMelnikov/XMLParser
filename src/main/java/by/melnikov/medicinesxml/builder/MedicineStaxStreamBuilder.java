@@ -17,10 +17,9 @@ import java.util.Optional;
 import java.util.Set;
 
 public class MedicineStaxStreamBuilder extends AbstractMedicineBuilder {
-    private Set<Medicine> medicines;
+    private final Set<Medicine> medicines;
     private Medicine currentMedicine;
     private MedicineXmlNode currentNode;
-    private XMLStreamReader reader;
 
     public MedicineStaxStreamBuilder() {
          medicines = new HashSet<>();
@@ -35,7 +34,7 @@ public class MedicineStaxStreamBuilder extends AbstractMedicineBuilder {
     public void buildSetMedicines(String fileName) throws MedicineCustomException {
         try (FileInputStream input = new FileInputStream(fileName)) {
             XMLInputFactory factory = XMLInputFactory.newInstance();
-            reader = factory.createXMLStreamReader(input);
+            XMLStreamReader reader = factory.createXMLStreamReader(input);
             while (reader.hasNext()) {
                 int type = reader.next();
                 if (type == START_ELEMENT) {
@@ -109,11 +108,11 @@ public class MedicineStaxStreamBuilder extends AbstractMedicineBuilder {
         return medicineDosage;
     }
 
-    private MedicineCertification buildMedicineCertification(XMLStreamReader reader) throws XMLStreamException {
-        MedicineCertification medicineCertification = new MedicineCertification();
-        medicineCertification.setId(reader.getAttributeValue(null, REGISTRATION_NUMBER.getTag()));
+    private MedicineCertificate buildMedicineCertification(XMLStreamReader reader) throws XMLStreamException {
+        MedicineCertificate medicineCertificate = new MedicineCertificate();
+        medicineCertificate.setId(reader.getAttributeValue(null, REGISTRATION_NUMBER.getTag()));
         Optional<String> registryOrganization = Optional.ofNullable(reader.getAttributeValue(null, REGISTRY_ORGANIZATION.getTag()));
-        medicineCertification.setRegistryOrganization(registryOrganization.orElse(MedicineCertification.DEFAULT_REGISTRY_ORGANIZATION));
+        medicineCertificate.setRegistryOrganization(registryOrganization.orElse(MedicineCertificate.DEFAULT_REGISTRY_ORGANIZATION));
         boolean isPermissionDate = false;
         boolean isExpiredDate = false;
         int type;
@@ -124,17 +123,17 @@ public class MedicineStaxStreamBuilder extends AbstractMedicineBuilder {
                     currentNode = getCurrentNode(reader);
                     switch (currentNode) {
                         case PERMISSION_DATE -> {
-                            medicineCertification.setPermissionDate(YearMonth.parse(getXMLText(reader)));
+                            medicineCertificate.setPermissionDate(YearMonth.parse(getXMLText(reader)));
                             isPermissionDate = true;
                         }
                         case EXPIRED_DATE -> {
-                            medicineCertification.setExpiredDate(YearMonth.parse(getXMLText(reader)));
+                            medicineCertificate.setExpiredDate(YearMonth.parse(getXMLText(reader)));
                             isExpiredDate = true;
                         }
                     }
                 }
                 case END_ELEMENT -> {
-                    if (isPermissionDate && isExpiredDate) return medicineCertification;
+                    if (isPermissionDate && isExpiredDate) return medicineCertificate;
                 }
             }
         }
